@@ -1,0 +1,94 @@
+<h2 align=center> Input/Output by alexis.<br>
+ <br> </h2>
+
+<br>
+<input id="myInput" type=text size=50 value='Enter Your Name Here' onfocus="{
+	document.getElementById('myInput').value = ''
+}"><br>
+
+<input type=button value="Enter" onclick="{
+
+		document.getElementById('myDiv01').innerHTML= 'Your name is: <h2>'+		document.getElementById('myInput').value +'</h2> <br> Will you enter your age please?'
+
+		document.getElementById('myButton01').style.visibility = 'visible'
+		document.getElementById('myButton02').style.visibility = 'visible'
+}"> <br>
+
+<input type=button value = clear onclick="{
+
+		document.getElementById('myDiv01').innerHTML=''
+		document.getElementById('myDiv02').innerHTML= ''
+	}"><br><br><br>
+<div id="myDiv01">...</div><br>
+
+<input id="myInput02" type=text size=50  style='visibility:hidden' value='Enter Your Age Here' onfocus="{
+	document.getElementById('myInput02').value = ''
+}"><br>
+<input type=button id="myButton01"  style='visibility:hidden' value="Sure" onclick="{
+	document.getElementById('myButton01').style.visibility = 'hidden'
+	document.getElementById('myButton02').style.visibility = 'hidden'
+	document.getElementById('myDiv02').style.visibility = 'visible'
+	document.getElementById('myButton03').style.visibility = 'visible'
+	document.getElementById('myInput02').style.visibility = 'visible'
+	document.getElementById('myDiv01').innerHTML= 'Your name is: <h2>'+		document.getElementById('myInput').value +'</h2> <br> '
+
+}"><input type=button id="myButton02"  style='visibility:hidden' value="No thank you" onclick="{
+
+		document.getElementById('myDiv02').innerHTML= 'Well okay then...'
+
+
+}"><br>
+<br>
+
+<input type=button value = Enter id="myButton03" style='visibility:hidden' onclick="{
+let y = ''
+let x = Math.abs(document.getElementById('myInput02').value)
+
+if (x<13){
+
+ y='Ha! You are a child'
+
+}
+if (x<20 && x>12){
+
+ y='Ew, teenager'
+
+}
+if (x<35 && x>19){
+
+ y='Oh man, you an adult'
+
+}
+
+if (x==35){
+
+ y='<i> midlife crisis time </i>'
+
+}
+
+if (x<65 && x>35){
+
+ y='Oh man, you an old adult'
+
+}
+
+if (x>65){
+
+ y='Now you just old'
+
+}
+
+
+if (x>120){
+
+ y='Now you just lie'
+
+}
+
+
+document.getElementById('myDiv02').innerHTML= 'Your age is: <h2>'+x +'</h2><br> '+y
+	}">
+
+
+<br><br><br>
+<div id="myDiv02" style='visibility:hidden'>...</div><br>
