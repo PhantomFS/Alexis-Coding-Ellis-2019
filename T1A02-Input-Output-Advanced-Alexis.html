@@ -1,0 +1,428 @@
+<h2 align=center> Input/Output by alexis.<br>
+ <br> </h2>
+<script>
+
+let z = 0
+
+</script>
+
+<br>
+<input id="myInput" type=text size=50 value='Enter Your Name Here' onfocus="{
+	document.getElementById('myInput').value = ''
+}"><br>
+
+<input type=button value="Enter" onclick="{
+
+		document.getElementById('myDiv01').innerHTML= 'Your name is: <h2>'+		document.getElementById('myInput').value +'</h2> <br> Will you enter your age please?'
+
+		document.getElementById('myButton01').style.visibility = 'visible'
+		document.getElementById('myButton02').style.visibility = 'visible'
+}"> <br>
+
+<input type=button value = Clear onclick="{
+
+		document.getElementById('myDiv01').innerHTML= ''
+        document.getElementById('myDiv02').style.visibility = 'hidden'
+        document.getElementById('myDiv03').style.visibility = 'hidden'
+        document.getElementById('myDiv07').style.visibility = 'hidden'
+	    document.getElementById('myButton04').style.visibility = 'hidden'
+	    document.getElementById('myButton07').style.visibility = 'hidden'
+        document.getElementById('myButton03').style.visibility = 'hidden'
+        document.getElementById('myButton02').style.visibility = 'hidden'
+        document.getElementById('myButton09').style.visibility = 'hidden'
+        document.getElementById('myInput02').style.visibility = 'hidden'
+        document.getElementById('myInput04').style.visibility = 'hidden'
+	}"><br><br><br>
+<div id="myDiv01">...</div><br>
+
+<input id="myInput02" type=text size=50  style='visibility:hidden' value='Enter Your Age Here' onfocus="{
+	document.getElementById('myInput02').value = ''
+}"><br>
+<input type=button id="myButton01"  style='visibility:hidden' value="Sure" onclick="{
+	document.getElementById('myButton01').style.visibility = 'hidden'
+	document.getElementById('myButton02').style.visibility = 'hidden'
+	document.getElementById('myDiv02').style.visibility = 'visible'
+	document.getElementById('myButton03').style.visibility = 'visible'
+	document.getElementById('myInput02').style.visibility = 'visible'
+	document.getElementById('myDiv01').innerHTML= 'Your name is: <h2>'+		document.getElementById('myInput').value +'</h2> <br> '
+
+}"><input type=button id="myButton02"  style='visibility:hidden' value="No thank you" onclick="{
+
+		document.getElementById('myDiv02').innerHTML= 'Well okay then...'
+
+
+}"><br>
+<br>
+
+<input type=button value = Enter id="myButton03" style='visibility:hidden' onclick="{
+let y = ''
+let x = Math.abs(document.getElementById('myInput02').value)
+
+if (x<13){
+
+ y='Ha! You are a child'
+ let z=0
+}
+if (x<20 && x>12){
+
+ y='Ew, teenager'
+z=1
+}
+if (x<35 && x>19){
+
+ y='Oh man, you an adult'
+z=2
+}
+
+if (x==35){
+
+ y='<i> midlife crisis time </i>'
+z=3
+}
+
+if (x<65 && x>35){
+
+ y='Oh man, you an old adult'
+z=4
+}
+
+if (x>65){
+
+ y='Now you just old'
+z=5
+}
+
+
+if (x>120){
+
+ y='Now you just lie'
+z=6
+}
+	document.getElementById('myButton04').style.visibility = 'visible'
+	document.getElementById('myButton07').style.visibility = 'visible'
+document.getElementById('myDiv03').style.visibility = 'visible'
+document.getElementById('myDiv02').innerHTML= 'Your age is: <h2>'+x +'</h2><br> '+y
+	}">
+
+
+<br><br><br>
+<div id="myDiv02" style='visibility:hidden'>...</div><br>
+<input id="myInput04" style='visibility:hidden' type=text size=50 value='Enter Your Zodiac Sign Here' onfocus="{
+	document.getElementById('myInput04').value = ''
+}"><br>
+<input type=button id="myButton09"  style='visibility:hidden' value="Enter" onclick="{
+
+let a = document.getElementById('myInput04').value.toLowerCase()
+	if (z==0){
+
+        if (a=='aries'){
+            y='crazy infant'
+        }
+        if (a=='taurus'){
+            y='chill infant'
+        }
+        if (a=='gemini'){
+            y='talkative infant'
+        }
+        if (a=='cancer'){
+            y='crying infant'
+        }
+        if (a=='leo'){
+            y='self-absorbed infant'
+        }
+        if (a=='virgo'){
+            y='OCD infant'
+        }
+        if (a=='libra'){
+            y='balanced infant'
+        }
+        if (a=='scorpio'){
+            y='evil infant'
+        }
+        if (a=='sagittarius'){
+            y='party infant'
+        }
+        if (a=='capricorn'){
+            y='stern infant'
+        }
+        if (a=='aquarius'){
+            y='revolution infant'
+        }
+        if (a=='pisces'){
+            y='introverted infant'
+        }
+
+
+
+
+
+}
+else if (z==1){
+
+        if (a=='aries'){
+            y='crazy teen'
+        }
+        if (a=='taurus'){
+            y='chill teen'
+        }
+        if (a=='gemini'){
+            y='talkative teen'
+        }
+        if (a=='cancer'){
+            y='crying teen'
+        }
+        if (a=='leo'){
+            y='self-absorbed teen'
+        }
+        if (a=='virgo'){
+            y='OCD teen'
+        }
+        if (a=='libra'){
+            y='balanced teen'
+        }
+        if (a=='scorpio'){
+            y='evil teen'
+        }
+        if (a=='sagittarius'){
+            y='party teen'
+        }
+        if (a=='capricorn'){
+            y='stern teen'
+        }
+        if (a=='aquarius'){
+            y='revolution teen'
+        }
+        if (a=='pisces'){
+            y='introverted teen'
+        }
+
+}
+else if (z==2){
+
+        if (a=='aries'){
+            y='crazy young (wo)man'
+        }
+        if (a=='taurus'){
+            y='chill young (wo)man'
+        }
+        if (a=='gemini'){
+            y='talkative young (wo)man'
+        }
+        if (a=='cancer'){
+            y='crying young (wo)man'
+        }
+        if (a=='leo'){
+            y='self-absorbed young (wo)man'
+        }
+        if (a=='virgo'){
+            y='OCD young (wo)man'
+        }
+        if (a=='libra'){
+            y='balanced young (wo)man'
+        }
+        if (a=='scorpio'){
+            y='evil young (wo)man'
+        }
+        if (a=='sagittarius'){
+            y='party young (wo)man'
+        }
+        if (a=='capricorn'){
+            y='stern young (wo)man'
+        }
+        if (a=='aquarius'){
+            y='revolution young (wo)man'
+        }
+        if (a=='pisces'){
+            y='introverted young (wo)man'
+        }
+
+}
+
+else if (z==3){
+        if (a=='aries'){
+            y='crazy crisis'
+        }
+        if (a=='taurus'){
+            y='chill crisis'
+        }
+        if (a=='gemini'){
+            y='talkative crisis'
+        }
+        if (a=='cancer'){
+            y='crying crisis'
+        }
+        if (a=='leo'){
+            y='self-absorbed crisis'
+        }
+        if (a=='virgo'){
+            y='OCD crisis'
+        }
+        if (a=='libra'){
+            y='balanced crisis'
+        }
+        if (a=='scorpio'){
+            y='evil crisis'
+        }
+        if (a=='sagittarius'){
+            y='party crisis'
+        }
+        if (a=='capricorn'){
+            y='stern crisis'
+        }
+        if (a=='aquarius'){
+            y='revolution crisis'
+        }
+        if (a=='pisces'){
+            y='introverted crisis'
+        }
+
+}
+
+else if (z==4){
+
+        if (a=='aries'){
+            y='crazy old (wo)man'
+        }
+        if (a=='taurus'){
+            y='chill old (wo)man'
+        }
+        if (a=='gemini'){
+            y='talkative old (wo)man'
+        }
+        if (a=='cancer'){
+            y='crying old (wo)man'
+        }
+        if (a=='leo'){
+            y='self-absorbed old (wo)man'
+        }
+        if (a=='virgo'){
+            y='OCD old (wo)man'
+        }
+        if (a=='libra'){
+            y='balanced old (wo)man'
+        }
+        if (a=='scorpio'){
+            y='evil old (wo)man'
+        }
+        if (a=='sagittarius'){
+            y='party old (wo)man'
+        }
+        if (a=='capricorn'){
+            y='stern old (wo)man'
+        }
+        if (a=='aquarius'){
+            y='revolution old (wo)man'
+        }
+        if (a=='pisces'){
+            y='introverted old (wo)man'
+        }
+
+}
+
+else if (z==5){
+        if (a=='aries'){
+            y='crazy senior'
+        }
+        if (a=='taurus'){
+            y='chill senior'
+        }
+        if (a=='gemini'){
+            y='talkative senior'
+        }
+        if (a=='cancer'){
+            y='crying senior'
+        }
+        if (a=='leo'){
+            y='self-absorbed senior'
+        }
+        if (a=='virgo'){
+            y='OCD senior'
+        }
+        if (a=='libra'){
+            y='balanced senior'
+        }
+        if (a=='scorpio'){
+            y='evil senior'
+        }
+        if (a=='sagittarius'){
+            y='party senior'
+        }
+        if (a=='capricorn'){
+            y='stern senior'
+        }
+        if (a=='aquarius'){
+            y='revolution senior'
+        }
+        if (a=='pisces'){
+            y='introverted senior'
+        }
+
+}
+
+
+else if (z==6){
+        if (a=='aries'){
+            y='crazy liar'
+        }
+        if (a=='taurus'){
+            y='chill liar'
+        }
+        if (a=='gemini'){
+            y='talkative liar'
+        }
+        if (a=='cancer'){
+            y='crying liar'
+        }
+        if (a=='leo'){
+            y='self-absorbed liar'
+        }
+        if (a=='virgo'){
+            y='OCD liar'
+        }
+        if (a=='libra'){
+            y='balanced liar'
+        }
+        if (a=='scorpio'){
+            y='evil liar'
+        }
+        if (a=='sagittarius'){
+            y='party liar'
+        }
+        if (a=='capricorn'){
+            y='stern liar'
+        }
+        if (a=='aquarius'){
+            y='revolution liar'
+        }
+        if (a=='pisces'){
+            y='introverted liar'
+        }
+}
+
+else{
+
+alert()
+
+}
+
+document.getElementById('myDiv07').innerHTML= 'You are a ' +y+ '.'
+
+}">
+<div id="myDiv03" style='visibility:hidden'>How about your zodiac sign?</div><br>
+<input type=button id="myButton04"  style='visibility:hidden' value="Sure" onclick="{
+
+	document.getElementById('myButton04').style.visibility = 'hidden'
+	document.getElementById('myButton07').style.visibility = 'hidden'
+	document.getElementById('myDiv03').style.visibility = 'hidden'
+    document.getElementById('myDiv07').style.visibility = 'visible'
+	document.getElementById('myButton09').style.visibility = 'visible'
+	document.getElementById('myInput04').style.visibility = 'visible'
+
+
+}"><input type=button id="myButton07"  style='visibility:hidden' value="No thank you" onclick="{
+
+		document.getElementById('myDiv07').innerHTML= 'Well okay then...'
+
+
+}"><br>
+<div id="myDiv07" style='visibility:hidden'>...</div>
