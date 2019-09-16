@@ -1,0 +1,81 @@
+
+<input type=text id="myText01" value=3>
+
+
+
+<input type=button value="run For Loop" onclick="{
+let myL=''
+document.getElementById('mydiv01').innerHTML = ''
+
+for (let x=0; x <= document.getElementById('myText01').value; x++) {
+
+myL += `x is  ` +x+ `<br>`
+
+}
+
+document.getElementById('mydiv01').innerHTML = myL
+
+}"> <br>
+
+<input type=button value="Loop Pascal Pyrmid" onclick="{
+
+myRow = parseInt(document.getElementById('myText01').value)
+  function createPascalTriangle (numRows) {
+    var pascalTriangle = [];
+
+    for (var i = 0; i < numRows; i++) {
+      pascalTriangle[i] = new Array(i+1);
+
+      for (var j = 0; j < i+1; j++) {
+        if (j === 0 || j === i) {
+          pascalTriangle[i][j] = 1;
+        } else {
+          pascalTriangle[i][j] = pascalTriangle[i-1][j-1] + pascalTriangle[i-1][j];
+        }
+      }
+    }
+
+    return pascalTriangle;
+  }
+
+//  console.table(createPascalTriangle(myRow));
+
+let myAr = []
+myAr = createPascalTriangle(myRow)
+
+
+// console.log(createPascalTriangle(myRow))
+
+console.log(myAr)
+
+
+
+document.getElementById('mydiv01').innerHTML = ''
+for(let x = 0; x < myRow; x++ ){
+  for(let y = 0; y < myAr[x].length; y++ ){
+
+
+    document.getElementById('mydiv01').innerHTML += myAr[x][y] + ', '
+
+
+  }
+
+      document.getElementById('mydiv01').innerHTML +=  ` <br>`
+}
+
+
+}">
+
+
+
+<input type=button value="Clear" onclick="{
+
+
+document.getElementById('mydiv01').innerHTML = ''
+
+
+
+}">
+
+
+<div id="mydiv01">...</div>
