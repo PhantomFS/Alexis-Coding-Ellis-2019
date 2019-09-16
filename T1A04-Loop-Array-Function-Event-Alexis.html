@@ -1,0 +1,109 @@
+<script>
+let myArray = []
+ myArray[0] = []
+ myArray[1] = []
+ myArray[2] = []
+ myArray[3] = []
+function myFun(myAr){
+     let myFinal
+     myArray[0][0] = 'June'
+     myArray[0][1] = 'July'
+     myArray[0][2] = 'August'
+     myArray[1][0] = 'December'
+     myArray[1][1] = 'January'
+     myArray[1][2] = 'February'
+     myArray[2][0] = 'March'
+     myArray[2][1] = 'April'
+     myArray[2][2] = 'May'
+     myArray[3][0] = 'September'
+     myArray[3][1] = 'October'
+     myArray[3][2] = 'November'
+
+    if (myAr == 0){
+        myFinal = 'The hot months are: '
+        for (let myLoop=0; myLoop<= 2; myLoop++){
+
+            myFinal += myArray[0][myLoop]+' '
+
+
+        }
+    }
+    if (myAr == 1){
+        myFinal = 'The cold months are: '
+        for (let myLoop=0; myLoop<= 2; myLoop++){
+
+            myFinal += myArray[1][myLoop]+' '
+
+
+        }
+    }
+    if (myAr == 2){
+        myFinal = 'The rainy months are: '
+        for (let myLoop=0; myLoop<= 2; myLoop++){
+
+            myFinal += myArray[2][myLoop]+' '
+
+        }
+    }
+    if (myAr == 3){
+        myFinal = 'The windy months are: '
+        for (let myLoop=0; myLoop<= 2; myLoop++){
+
+            myFinal += myArray[3][myLoop]+' '
+
+        }
+    }
+
+return myFinal
+
+
+
+
+
+
+}
+
+
+
+
+
+</script>
+<h3>Choose which array you want.</h3>
+<select id="myOp"
+
+onblur="{
+let myX = 0
+if (document.getElementById('myOp').value == 0){
+
+document.getElementById('myDiv02').innerHTML = myFun(0)
+
+}
+if (document.getElementById('myOp').value == 1){
+
+document.getElementById('myDiv02').innerHTML = myFun(1)
+
+}
+if (document.getElementById('myOp').value == 2){
+
+document.getElementById('myDiv02').innerHTML = myFun(2)
+
+}
+if (document.getElementById('myOp').value == 3){
+
+document.getElementById('myDiv02').innerHTML = myFun(3)
+
+}
+}">
+	<option value="0"> 1</option>
+	<option value="1"> 2</option>
+	<option value="2"> 3</option>
+	<option value="3"> 4</option>
+
+</select><input type=button value='clear' onclick="{
+
+document.getElementById('myDiv02').innerHTML = ...
+
+}">
+
+<br>
+<div id="myDiv02" >...</div>
