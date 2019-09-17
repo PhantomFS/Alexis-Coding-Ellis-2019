@@ -1,3 +1,6 @@
+<body style="text-align:center;">
+
+
 <script>
 let myArray = []
  myArray[0] = []
@@ -72,6 +75,7 @@ return myFinal
 <select id="myOp"
 
 onblur="{
+    document.getElementById('myOp').style.background = 'white'
 let myX = 0
 if (document.getElementById('myOp').value == 0){
 
@@ -93,17 +97,28 @@ if (document.getElementById('myOp').value == 3){
 document.getElementById('myDiv02').innerHTML = myFun(3)
 
 }
+}"
+
+onfocus="{
+
+document.getElementById('myOp').style.background = 'LightSteelBlue'
+
 }">
 	<option value="0"> 1</option>
 	<option value="1"> 2</option>
 	<option value="2"> 3</option>
 	<option value="3"> 4</option>
 
-</select><input type=button value='clear' onclick="{
+</select><input type=button id="myButton" value='clear' onclick="{
 
 document.getElementById('myDiv02').innerHTML = '...'
 
-}">
+}"
+onmouseover="{document.getElementById('myButton').style.background = 'red'}"
+onmouseout="{}document.getElementById('myButton').style.background = 'white'"
+
+>
 
 <br>
 <div id="myDiv02" >...</div>
+</body>
