@@ -1,0 +1,95 @@
+body {
+
+text-align:center;
+background-color:#161a17;
+
+
+}
+
+h1 {
+
+color: #0da60d;
+text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+text-transform: capitalize;
+background-image: url(https://www.colourbox.com/preview/17556739-seamless-green-decimal-computer-code-background-wallpaper-vector.jpg);
+}
+
+textarea{
+
+background-color: #232423;
+
+color:#2a5c2a;
+border-color: #161a17;
+font-size: 15px;
+
+
+}
+
+
+
+.button_css{
+    border:none;
+padding: 5px 10px;
+background-color: #2a5c2a;
+
+color: black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.selection_css{
+    border:none;
+padding: 5px 10px;
+background-color: #2a5c2a;
+
+color: black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+
+table{
+
+border-image: url(https://www.colourbox.com/preview/17556739-seamless-green-decimal-computer-code-background-wallpaper-vector.jpg);
+border: 5px;
+
+
+
+}
+p {
+
+font-size: 15px;
+color:  #0da60d;
+text-indent: 50px;
+background-color: #232423;
+
+
+}
