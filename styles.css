@@ -75,21 +75,21 @@ color: black;
   font-size: 14px;
 }
 
+p {
 
-table{
+font-size: 20px;
 
-border-image: url(https://www.colourbox.com/preview/17556739-seamless-green-decimal-computer-code-background-wallpaper-vector.jpg);
-border: 5px;
+text-indent: 50px;
 
+
+color: #2a5c2a;
 
 
 }
-p {
 
-font-size: 15px;
-color:  #0da60d;
-text-indent: 50px;
-background-color: #232423;
+table{
+padding: 10px;
+ text-align: center;
 
-
+ background-color: #232423;
 }
