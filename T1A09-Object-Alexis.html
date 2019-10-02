@@ -157,25 +157,25 @@ if(parseInt(myPatient.bodyTemp)>= 37.5){
 
     if(myArray[0]==1 && myArray[4]==1 && myArray[5]==1){
 
-        document.getElementById(`myDiv02`).innerHTML= `You got a nasty cold`
+        document.getElementById(`myDiv02`).innerHTML= `You got a nasty cold, Mr.`+myPatient.lastName
 
 
     }
     if(myArray[1]==1 && myArray[2]==1 && myArray[3]==1){
 
-        document.getElementById(`myDiv02`).innerHTML= `You got heat stroke, my dude`
+        document.getElementById(`myDiv02`).innerHTML= `You got heat stroke, Mr.`+myPatient.lastName
 
 
     }
         if(myArray[3]==1 && myArray[4]==1 && myArray[2]==1){
 
-        document.getElementById(`myDiv02`).innerHTML= `You got the flu, my dude`
+        document.getElementById(`myDiv02`).innerHTML= `You got the flu, Mr.`+myPatient.lastName
 
 
     }
         if(myArray[0]==1 && myArray[1]==1 && myArray[2]==1 && myArray[3]==1 && myArray[4]==1 && myArray[5]==1){
 
-        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon`
+        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon, Mr.`+myPatient.lastName
 
 
     }
@@ -209,8 +209,9 @@ document.getElementById(`Nausname`).style.visibility=`hidden`
 document.getElementById(`Lightname`).style.visibility=`hidden`
 document.getElementById(`Dehyname`).style.visibility=`hidden`
 document.getElementById(`Coughname`).style.visibility=`hidden`
-document.getElementById(`h1`).innerHTML= `GO TO THE HOSPITAL`
-document.getElementById(`h2`).innerHTML= `GO TO THE HOSPITAL`
+
+document.getElementById(`h1`).innerHTML= myPatient.firstName+ ` GO TO THE HOSPITAL `
+document.getElementById(`h2`).innerHTML= myPatient.firstName+` GO TO THE HOSPITAL `
 }
 
 if(parseInt(myPatient.bodyTemp)>= 35 && parseInt(myPatient.bodyTemp) <= 37){
@@ -218,12 +219,12 @@ if(parseInt(myPatient.bodyTemp)>= 35 && parseInt(myPatient.bodyTemp) <= 37){
 
         if(myArray[0]==1 && myArray[1]==1 && myArray[2]==1 && myArray[3]==1 && myArray[4]==1 && myArray[5]==1){
 
-        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon but at least you dont have a fever`
+        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon but at least you dont have a fever, Mr.`+myPatient.lastName
 
 
     }
     else {
-        document.getElementById(`myDiv02`).innerHTML= `Eh, Youll be fine`
+        document.getElementById(`myDiv02`).innerHTML= `Eh, Youll be fine, Mr.`+myPatient.lastName
 
 
     }
