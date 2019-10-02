@@ -213,7 +213,24 @@ document.getElementById(`h1`).innerHTML= `GO TO THE HOSPITAL`
 document.getElementById(`h2`).innerHTML= `GO TO THE HOSPITAL`
 }
 
+if(parseInt(myPatient.bodyTemp)>= 35 && parseInt(myPatient.bodyTemp) <= 37){
 
+
+        if(myArray[0]==1 && myArray[1]==1 && myArray[2]==1 && myArray[3]==1 && myArray[4]==1 && myArray[5]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon but at least you dont have a fever`
+
+
+    }
+    else {
+        document.getElementById(`myDiv02`).innerHTML= `Eh, Youll be fine`
+
+
+    }
+
+
+
+}
 
 }'>
 <br><br>
