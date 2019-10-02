@@ -1,0 +1,226 @@
+<body id="myBod">
+
+<h1 id="h1">Objects.</h1><br><br>
+
+<textarea rows="8" cols="70" id="myTextA01" >{
+
+"firstname":"Billy",
+"age":"72",
+"lastname":"Bob",
+"birthdate":"09/12/1900",
+"favouriteitem":"Book"
+
+}
+</textarea>
+<br><br>
+<input type=button value="The First Name" id="button01"onclick="{
+var myObj = {}
+myObj=JSON.parse(document.getElementById('myTextA01').value)
+
+document.getElementById('myDiv01').innerHTML = 'Sir '+ myObj.lastname+ '`s first name is '+myObj.firstname
+
+
+}"><input type=button value="The Last Name" id="button02"onclick="{
+var myObj = {}
+myObj=JSON.parse(document.getElementById('myTextA01').value)
+
+document.getElementById('myDiv01').innerHTML = myObj.firstname +'`s last name is '+myObj.lastname
+
+
+}">
+<input type=button value="The Age" id="button03"onclick="{
+var myObj = {}
+myObj=JSON.parse(document.getElementById('myTextA01').value)
+
+document.getElementById('myDiv01').innerHTML = myObj.firstname+' is '+myObj.age+' years old'
+
+
+}">
+<input type=button value="The Birth Date" id="button04"onclick="{
+var myObj = {}
+myObj=JSON.parse(document.getElementById('myTextA01').value)
+
+document.getElementById('myDiv01').innerHTML = myObj.firstname+' was born '+myObj.birthdate
+
+
+}">
+<input type=button value="The Favourite Item" id="button05"onclick="{
+var myObj = {}
+myObj=JSON.parse(document.getElementById('myTextA01').value)
+
+document.getElementById('myDiv01').innerHTML = myObj.firstname +' likes a good '+myObj.favouriteitem
+
+
+}">
+
+
+
+<div id="myDiv01">...</div>
+
+<br><br><br><br><br>
+
+<h1 id="h2">Medical Checkup</h1>
+<br><br>
+<input type="text" placeholder="First Name" id="myInput01">
+<input type="text" placeholder="Last Name" id="myInput02">
+<input type="text" placeholder="Age" id="myInput03">
+<input type="text" placeholder="Body Temp (Celcius)" id="myInput04">
+<br>
+
+<div>
+  <input type="checkbox" id="Headache" name="Headache">
+  <label id="Headname"for="Headache">Headache</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Sorethroat" name="Sorethroat">
+  <label id="Sorename"for="Sorethroat">Sore Throat</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Nauseous" name="Nauseous">
+  <label id="Nausname"for="Nauseous">Nauseous</label>
+</div>
+
+<div>
+  <input type="checkbox" id="LightHeaded" name="LightHeaded">
+  <label id="Lightname"for="LightHeaded">Light Headed</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Dehydrated" name="Dehydrated">
+  <label id="Dehyname"for="Dehydrated">Dehydrated</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Cough" name="Cough">
+  <label id="Coughname"for="Cough">Cough</label>
+</div>
+
+
+<input type="button" value="Submit" id="button06" onclick='{
+
+let myPatient = {
+
+"firstName":"John",
+"lastName":"Smith",
+"age":"20",
+"bodyTemp":"37"
+}
+myPatient.firstName = document.getElementById("myInput01").value
+myPatient.lastName = document.getElementById("myInput02").value
+myPatient.age = document.getElementById("myInput03").value
+myPatient.bodyTemp = document.getElementById("myInput04").value
+let myArray=[]
+
+if(parseInt(myPatient.bodyTemp)>= 37.5){
+
+    if(document.getElementById(`Cough`).checked==true){
+
+        myArray[0] = 1
+
+
+    }
+        if(document.getElementById(`LightHeaded`).checked==true){
+
+        myArray[1] = 1
+
+
+    }
+
+    if(document.getElementById(`Dehydrated`).checked==true){
+
+        myArray[2] = 1
+
+
+    }
+    if(document.getElementById(`Nauseous`).checked==true){
+
+        myArray[3] = 1
+
+
+    }
+    if(document.getElementById(`Sorethroat`).checked==true){
+
+        myArray[4] = 1
+
+
+    }
+    if(document.getElementById(`Headache`).checked==true){
+
+        myArray[5] = 1
+
+
+    }
+
+
+
+    if(myArray[0]==1 && myArray[4]==1 && myArray[5]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You got a nasty cold`
+
+
+    }
+    if(myArray[1]==1 && myArray[2]==1 && myArray[3]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You got heat stroke, my dude`
+
+
+    }
+        if(myArray[3]==1 && myArray[4]==1 && myArray[2]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You got the flu, my dude`
+
+
+    }
+        if(myArray[0]==1 && myArray[1]==1 && myArray[2]==1 && myArray[3]==1 && myArray[4]==1 && myArray[5]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon`
+
+
+    }
+}
+
+if(parseInt(myPatient.bodyTemp)>= 40 || parseInt(myPatient.bodyTemp)< 35){
+document.body.style.backgroundColor = `red`
+
+document.getElementById(`myDiv02`).style.visibility=`hidden`
+document.getElementById(`myDiv01`).style.visibility=`hidden`
+document.getElementById(`myInput01`).style.visibility=`hidden`
+document.getElementById(`myInput02`).style.visibility=`hidden`
+document.getElementById(`myInput03`).style.visibility=`hidden`
+document.getElementById(`myInput04`).style.visibility=`hidden`
+document.getElementById(`myTextA01`).style.visibility=`hidden`
+document.getElementById(`button01`).style.visibility=`hidden`
+document.getElementById(`button02`).style.visibility=`hidden`
+document.getElementById(`button03`).style.visibility=`hidden`
+document.getElementById(`button04`).style.visibility=`hidden`
+document.getElementById(`button05`).style.visibility=`hidden`
+document.getElementById(`button06`).style.visibility=`hidden`
+document.getElementById(`Headache`).style.visibility=`hidden`
+document.getElementById(`Sorethroat`).style.visibility=`hidden`
+document.getElementById(`Nauseous`).style.visibility=`hidden`
+document.getElementById(`LightHeaded`).style.visibility=`hidden`
+document.getElementById(`Dehydrated`).style.visibility=`hidden`
+document.getElementById(`Cough`).style.visibility=`hidden`
+document.getElementById(`Headname`).style.visibility=`hidden`
+document.getElementById(`Sorename`).style.visibility=`hidden`
+document.getElementById(`Nausname`).style.visibility=`hidden`
+document.getElementById(`Lightname`).style.visibility=`hidden`
+document.getElementById(`Dehyname`).style.visibility=`hidden`
+document.getElementById(`Coughname`).style.visibility=`hidden`
+document.getElementById(`h1`).innerHTML= `GO TO THE HOSPITAL`
+document.getElementById(`h2`).innerHTML= `GO TO THE HOSPITAL`
+}
+
+
+
+}'>
+<br><br>
+
+<div id="myDiv02">...</div>
+
+
+
+
+</body>
