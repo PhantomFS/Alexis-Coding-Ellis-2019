@@ -18,7 +18,7 @@ char speak(char b){
 }
 
 int main(){
-speak(1);
+    speak(1);
 
 
 
