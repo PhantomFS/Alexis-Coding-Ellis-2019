@@ -2,23 +2,23 @@
 
 #include <stdio.h>
 
-int triangle(int num){
+int * triangle(int num){
 
-    int triangle [num];
+    int triangle1 [num];
 
         for (int i = 0; i < num; i++) {
-            triangle[i] = new Array(i+1);
+            triangle1[i] = (triangle1[i][i+1]);
 
             for (int j = 0; j < i+1; j++) {
                 if (j == 0 || j == i) {
-                    triangle[i][j] = 1;
+                    triangle1[i][j] = (1);
             } else {
-                triangle[i][j] = triangle[i-1][j-1] + triangle[i-1][j];
+                triangle1[i][j] = (triangle1[i-1][j-1]) + (triangle1[i-1][j]);
             }
         }
     }
 
-    return triangle;
+    return triangle1;
 
 
 }
@@ -29,18 +29,16 @@ int main(){
     printf("Please enter a number");
     scanf("%i",&a);
 
-    int myAr[a] = triangle(a);
-
-
-// console.log(createPascalTriangle(myRow))
+    int * myAr[a] = {triangle(a)};
 
 
 
 
 
 
-    for(let x = 0; x < myRow; x++ ){
-        for(let y = 0; y < myAr[x].length; y++ ){
+
+    for(int x = 0; x < a; x++ ){
+        for(int y = 0; y < myAr[x]; y++ ){
 
 
             printf("%s, ",&myAr[x][y]);
