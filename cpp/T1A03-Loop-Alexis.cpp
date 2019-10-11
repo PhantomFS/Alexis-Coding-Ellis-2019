@@ -41,7 +41,7 @@ int main(){
     for(int x = 0; x < a; x++ ){
         for(int * y = 0; y < myAr[x]; y++ ){
 
-            myAr[x][y];
+            myAr[x][y]= &(myAr[x][y]);
 
             printf("%s, ",&myAr[x][y]);
 
