@@ -26,7 +26,8 @@ int * triangle(int num){
 
 
 int main(){
-    int a, b, c, d;
+    int a, c, d;
+
     printf("Please enter a number");
     scanf("%i",&a);
     int * myAr[a];
@@ -41,7 +42,6 @@ int main(){
     for(int x = 0; x < a; x++ ){
         for(int * y = 0; y < myAr[x]; y++ ){
 
-            myAr[x][y]= &(myAr[x][y]);
 
             printf("%s, ",&myAr[x][y]);
 
