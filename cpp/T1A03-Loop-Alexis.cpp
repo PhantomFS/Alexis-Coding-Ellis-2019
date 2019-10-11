@@ -40,6 +40,7 @@ int main(){
 
 
     for(int x = 0; x < a; x++ ){
+            myAr[x] = &(myAr[x][x+1]);
         for(int * y = 0; y < myAr[x]; y++ ){
 
 
