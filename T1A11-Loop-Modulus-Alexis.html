@@ -1,0 +1,95 @@
+<p align=center>
+
+<input type=text id="myText01" value=25>
+<input type=button value="run For Loop" onclick="{
+
+document.getElementById('mydiv01').innerHTML = ''
+let tem = 0
+for (let x=0; x <= document.getElementById('myText01').value; x++) {
+
+tem += `<br><b>x is  ` +x+ `</b><br>`
+
+if(x!=0){
+if (x % 2 == 1){
+tem += '<font color=coral>ODD NUMBER</font> <br>'
+}
+if (x % 2 == 0){
+tem += '<font color=red>divisble by 2</font> <br>'
+}
+
+
+if (x % 3 == 0){
+tem += '<font color=orange> divisible by 3</font> <br>'
+}
+
+
+if (x % 4 == 0){
+tem += '<font color=yellow>divisble by 4</font> <br>'
+}
+
+
+if (x % 5 == 0){
+tem += '<font color=green>divisble by 5</font> <br>'
+}
+
+if (x % 6 == 0){
+tem += '<font color=blue>divisble by 6</font> <br>'
+}
+
+
+if (x % 7 == 0){
+tem += '<font color=purple>divisble by 7</font> <br>'
+}
+if (x % 8 == 0){
+tem += '<font color=pink>divisble by 8</font> <br>'
+}
+
+if (x % 9 == 0){
+tem += '<font color=grey>divisble by 9</font> <br>'
+}
+
+
+if (x % 10 == 0){
+tem += '<font color=black>divisble by 10</font> <br>'
+}
+
+
+if((x == 3)||(x == 50)){
+tem += '<font color=grey>3 or 50</font><br>'
+}
+
+
+
+
+
+
+if (x < 4){
+tem += '<font color=lightblue>Bigger less than 4</font> <br>'
+}
+
+
+
+
+
+if ((x == 42)||(x == 57)){
+tem += 'This is either 42 or 57 <br> '
+}
+if (x==17){
+tem += 'Dat my Age <br> '
+}
+}
+}
+
+
+document.getElementById('mydiv01').innerHTML = tem
+}">
+
+
+<div align=right id="mydiv02">...</div>
+
+
+
+
+
+<div align=left id="mydiv01"></div>
+</p>
