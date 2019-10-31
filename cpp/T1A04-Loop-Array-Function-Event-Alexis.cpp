@@ -20,7 +20,7 @@ std::string  myAr[4][3] = {{" January"," February"," March"}, {" April"," May","
         }
     }
     if (Num == 1){
-        Final = "The cold months are: ";
+        Final = "The rainy months are: ";
         for (int myLoop=0; myLoop<= 2; myLoop++){
 
             Final.append(myAr[1][myLoop]);
@@ -29,7 +29,7 @@ std::string  myAr[4][3] = {{" January"," February"," March"}, {" April"," May","
         }
     }
     if (Num == 2){
-        Final = "The rainy months are: ";
+        Final = "The windy months are: ";
         for (int myLoop=0; myLoop<= 2; myLoop++){
 
             Final.append(myAr[2][myLoop]);
@@ -37,7 +37,7 @@ std::string  myAr[4][3] = {{" January"," February"," March"}, {" April"," May","
         }
     }
     if (Num == 3){
-        Final = "The windy months are: ";
+        Final = "The cold months are: ";
         for (int myLoop=0; myLoop<= 2; myLoop++){
 
             Final.append(myAr[3][myLoop]);
