@@ -121,7 +121,7 @@ text-transform: capitalize;
 
 </style>
 <body>
-<h1 align=center>Math By Alexis</h1>
+<h1 align=center>Calculator</h1>
 <input type=text id="myText" class="button_css" value="">
 <table><tr>
 	<td><input type=button class="button_css" value="Pi" onclick="{
@@ -184,10 +184,10 @@ if (document.getElementById('myOp').value == '1'){
 else if(document.getElementById('myOp').value == '2'){
 	b = Math.sin(document.getElementById('myText').value * Math.PI / 180)
 	document.getElementById('myText').value = b
-	//w = document.getElementById('myDiv').innerHTML}
+	//w = document.getElementById('myDiv').innerHTML
 
 
-
+}
 
 
 }">
@@ -239,7 +239,7 @@ if (document.getElementById('myOp').value == '1'){
 
 
 	let c = Math.cos(document.getElementById('myText').value)
-	document.getElementById('myDiv').innerHTML = c
+	document.getElementById('myText').value  = c
 	w = document.getElementById('myDiv').innerHTML
 
 }
@@ -247,7 +247,7 @@ if (document.getElementById('myOp').value == '1'){
 else if(document.getElementById('myOp').value == '2'){
 
 	let c = Math.cos(document.getElementById('myText').value* Math.PI / 180)
-	document.getElementById('myDiv').innerHTML = c
+	document.getElementById('myText').value = c
 	w = document.getElementById('myDiv').innerHTML
 }
 
@@ -296,7 +296,7 @@ document.getElementById('myDiv').innerHTML =g+ ` x `
 	<td>
 <input type=button value="tan" class="button_css" onclick="{
 d = Math.tan(document.getElementById('myText').value)
-document.getElementById('myDiv').innerHTML = d
+document.getElementById('myText').value = d
 w = document.getElementById('myDiv').innerHTML
 
 
@@ -304,7 +304,7 @@ if (document.getElementById('myOp').value == '1'){
 
 
 	d = Math.tan(document.getElementById('myText').value)
-	document.getElementById('myDiv').innerHTML = d
+	document.getElementById('myText').value = d
 	w = document.getElementById('myDiv').innerHTML
 
 }
