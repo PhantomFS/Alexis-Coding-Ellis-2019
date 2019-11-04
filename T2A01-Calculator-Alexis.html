@@ -1,0 +1,437 @@
+
+<style>
+body {
+
+
+background-color:#161a17;
+
+
+}
+h1 {
+
+color: #0da60d;
+text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+text-transform: capitalize;
+background-image: url(https://www.colourbox.com/preview/17556739-seamless-green-decimal-computer-code-background-wallpaper-vector.jpg);
+}
+
+textarea, text{
+
+background-color: #232423;
+
+color:#2a5c2a;
+border-color: #161a17;
+font-size: 15px;
+
+
+}
+
+
+
+.button_css{
+    border:none;
+padding: 5px 10px;
+background-color: #2a5c2a;
+
+color: black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.selection_css{
+    border:none;
+padding: 5px 10px;
+background-color: #2a5c2a;
+
+color: black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+p {
+
+font-size: 20px;
+
+text-indent: 50px;
+
+
+color: #2a5c2a;
+
+
+}
+
+table{
+padding: 10px;
+ text-align: center;
+
+ background-color: #232423;
+}
+form {
+
+color: #2a5c2a;
+text-align:center;
+font-size: 20px;
+text-transform: capitalize;
+
+}
+
+div {
+
+color: #2a5c2a;
+font-size: 20px;
+text-transform: capitalize;
+
+}
+ul {
+
+color: #2a5c2a;
+text-align:center;
+font-size: 20px;
+text-transform: capitalize;
+
+}
+
+</style>
+<body>
+<h1 align=center>Math By Alexis</h1>
+<input type=text id="myText" class="button_css" value="">
+<table><tr>
+	<td><input type=button class="button_css" value="Pi" onclick="{
+document.getElementById('myText').value = Math.PI
+ }">
+	</td>
+	<td>
+<input type=button class="button_css" value=SqR onclick="{
+ z= Math.sqrt(document.getElementById('myText').value)
+document.getElementById('myDiv').innerHTML += z
+}">
+	</td>
+	<td>
+<input type=button class="button_css" value=% onclick="{
+op = 7
+ x = parseInt(document.getElementById('myText').value)*0.01
+
+document.getElementById('myText').value = x
+}">
+	</td>
+	<td>
+<input type=button value="Ans" class="button_css" onclick="{
+document.getElementById('myText').value = w
+}">
+	</td>
+	<td>
+<input type=button value="Clear"  class="button_css" onclick="{
+document.getElementById('myDiv03').innerHTML = document.getElementById('myDiv').innerHTML +'<br>'+ document.getElementById('myDiv03').innerHTML
+document.getElementById('myDiv').innerHTML = ` `
+document.getElementById('myText').value = ``
+
+}">
+	</td>
+	<td>
+<input type=button value="Rand" class="button_css" onclick="{
+
+document.getElementById('myText').value = Math.floor(Math.random() * 101)
+
+}">
+	</td>
+</tr>
+
+
+
+
+
+
+<tr>
+	<td>
+<input type=button value="sin" class="button_css" onclick="{
+
+if (document.getElementById('myOp').value == '1'){
+
+
+	b = Math.sin(document.getElementById('myText').value)
+	document.getElementById('myText').value = b
+	//w = document.getElementById('myDiv').innerHTML
+}
+
+else if(document.getElementById('myOp').value == '2'){
+	b = Math.sin(document.getElementById('myText').value * Math.PI / 180)
+	document.getElementById('myText').value = b
+	//w = document.getElementById('myDiv').innerHTML}
+
+
+
+
+
+}">
+	</td>
+	<td>
+<input type=button value=7 class="button_css" onclick="{
+document.getElementById('myText').value += 7
+}">
+	</td>
+	<td>
+<input type=button value=8 class="button_css" onclick="{
+document.getElementById('myText').value += 8
+}">
+	</td>
+	<td>
+<input type=button value=9 class="button_css" onclick="{
+document.getElementById('myText').value += 9
+}">
+	</td>
+	<td>
+<input type=button value=÷ class="button_css" onclick="{
+op = 1
+g = document.getElementById('myText').value
+document.getElementById('myText').value = ''
+document.getElementById('myDiv').innerHTML =g+ ` / `
+
+
+
+}">
+	</td>
+	<td><select id="myOp" class="button_css">
+	<option value="1"> Radical</option>
+	<option value="2"> Degree</option>
+</select>
+	</td>
+</tr>
+
+
+
+
+<tr>
+	<td>
+<input type=button value="cos" class="button_css" onclick="{
+let c = Math.cos(document.getElementById('myText').value)
+document.getElementById('myDiv').innerHTML = c
+w = document.getElementById('myDiv').innerHTML
+
+if (document.getElementById('myOp').value == '1'){
+
+
+	let c = Math.cos(document.getElementById('myText').value)
+	document.getElementById('myDiv').innerHTML = c
+	w = document.getElementById('myDiv').innerHTML
+
+}
+
+else if(document.getElementById('myOp').value == '2'){
+
+	let c = Math.cos(document.getElementById('myText').value* Math.PI / 180)
+	document.getElementById('myDiv').innerHTML = c
+	w = document.getElementById('myDiv').innerHTML
+}
+
+
+}">
+	</td>
+	<td>
+<input type=button class="button_css" value=4 onclick="{
+if(document.getElementById('myText').value == `x`){
+document.getElementById('myText').value = ``}
+document.getElementById('myText').value += 4
+}">
+	</td>
+	<td>
+	<input type=button class="button_css" value=5 onclick="{
+if(document.getElementById('myText').value == `x`){
+document.getElementById('myText').value = ``}
+
+document.getElementById('myText').value += 5
+}">
+	</td>
+	<td>
+<input type=button class="button_css" value=6 onclick="{
+
+
+document.getElementById('myText').value += 6
+}">
+	</td>
+	<td>
+
+
+<input type=button class="button_css" value="*" onclick="{
+op = 2
+g = document.getElementById('myText').value
+document.getElementById('myText').value = ''
+document.getElementById('myDiv').innerHTML =g+ ` x `
+}">
+	</td>
+</tr>
+
+
+
+
+
+<tr>
+	<td>
+<input type=button value="tan" class="button_css" onclick="{
+d = Math.tan(document.getElementById('myText').value)
+document.getElementById('myDiv').innerHTML = d
+w = document.getElementById('myDiv').innerHTML
+
+
+if (document.getElementById('myOp').value == '1'){
+
+
+	d = Math.tan(document.getElementById('myText').value)
+	document.getElementById('myDiv').innerHTML = d
+	w = document.getElementById('myDiv').innerHTML
+
+}
+
+else if(document.getElementById('myOp').value == '2'){
+
+	d = Math.tan(document.getElementById('myText').value * Math.PI / 180)
+	document.getElementById('myDiv').innerHTML = d
+	w = document.getElementById('myDiv').innerHTML
+}
+
+
+}">
+	</td>
+	<td>
+<input type=button value=1 class="button_css" onclick="{
+document.getElementById('myText').value += 1
+}">
+	</td>
+	<td>
+<input type=button value=2 class="button_css" onclick="{
+document.getElementById('myText').value += 2
+}">
+	</td>
+	<td>
+<input type=button value=3 class="button_css" onclick="{
+document.getElementById('myText').value += 3
+}">
+	</td>
+	<td>
+<input type=button value="-" class="button_css" onclick="{
+op = 3
+g = document.getElementById('myText').value
+document.getElementById('myText').value = ''
+document.getElementById('myDiv').innerHTML =g+ ` - `
+}">
+	</td>
+</tr>
+
+
+
+
+
+
+
+
+<tr>
+	<td><input type=button class="button_css" value="x^y" onclick="{
+op = 5
+g = document.getElementById('myText').value
+
+
+document.getElementById('myText').value = ``
+document.getElementById('myDiv').innerHTML += g+ `^`
+}">
+	</td>
+
+	<td>
+<input type=button value=0 class="button_css" onclick="{
+document.getElementById('myText').value += 0
+}">
+	</td>
+	<td>
+<input type=button value="." class="button_css" onclick="{
+document.getElementById('myText').value += `.`
+}">
+	</td>
+	<td>
+
+
+
+<input type=button value="=" class="button_css" onclick="{
+
+let f = document.getElementById('myText').value
+if(op == 2){
+   document.getElementById('myDiv').innerHTML +=f + ' = ' +f * g
+//document.getElementById('myDiv02').innerHTML = ' ' +f * g
+u = f * g
+}
+if(op == 1){
+   document.getElementById('myDiv').innerHTML +=f + ' = '+g / f
+//document.getElementById('myDiv02').innerHTML=  ' ' +g / f
+u = g / f
+}
+if(op == 3){
+   t = g-f
+   document.getElementById('myDiv').innerHTML +=f + ' = '+t
+//document.getElementById('myDiv02').innerHTML = ' ' +t
+u = g-f
+}
+if(op == 4){
+   t = g+f
+	document.getElementById('myDiv').innerHTML +=f + ' = ' +(parseFloat(g) + parseFloat(f))
+	//document.getElementById('myDiv02').innerHTML = ' ' +(parseFloat(g) + parseFloat(f))
+	}
+
+if(op == 5){
+
+	t = Math.pow(g,f)
+	document.getElementById('myDiv').innerHTML +=f + ' = '+t
+	//document.getElementById('myDiv02').innerHTML= t
+}
+
+
+u = (parseFloat(g) +
+parseFloat(f))
+
+//w = document.getElementById('myDiv02').innerHTML
+}">
+
+
+
+
+	</td>
+	<td><input type=button value="+" class="button_css" onclick="{
+op = 4
+g = document.getElementById('myText').value
+document.getElementById('myText').value = ''
+document.getElementById('myDiv').innerHTML =g+ ` + `
+}">
+	</td>
+</tr>
+
+
+</table><br>
+<p >Answer: </p><div id="myDiv"> </div><div id="myDiv03" style="float:right">
+
+</div>
+
+</body>
