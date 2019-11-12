@@ -1,3 +1,6 @@
+<body style="background-image: url('bg.png');
+  background-repeat: no-repeat;  background-size: cover;color:white" >
+
 <h3 align=center> gifs </h3>
 <script type="text/javascript">
 
@@ -31,8 +34,7 @@ document.onkeydown = checkKey;
 function checkKey(myEventA) {
    let myEnd = new Date().getTime()
    let myDuration = Math.round((myEnd-myStart)/1000)
-   document.getElementById('myDiv').innerHTML = 'seconds: ' + myDuration +
-', keyCode: '+myEventA.keyCode
+
 
    if (myHitOther('myImg01','myImg02')){
 myStart = new Date().getTime()
@@ -139,16 +141,18 @@ document.getElementById('myDiv2').innerHTML = `Flower Score : ` +treasureScore
 
 
 if (myEventA.keyCode == 87){document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 +'px'     //w up
-
+document.getElementById('myImg01').src = 'fireboiback.gif'
 }
 if (myEventA.keyCode == 65){ document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 +'px'  //a left
 document.getElementById('myImg01').style.transform= 'rotate(0deg)'
+document.getElementById('myImg01').src = 'fireboi.gif'
 }
 if (myEventA.keyCode == 68){ document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 +'px'  //d right
 document.getElementById('myImg01').style.transform= 'scaleX(-1)'
+document.getElementById('myImg01').src = 'fireboi.gif'
 }
 if (myEventA.keyCode == 83){document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 +'px'     //s down
-
+document.getElementById('myImg01').src = 'fireboifront.gif'
 }
 if (myEventA.keyCode == 38){document.getElementById('myImg02').style.top = parseInt(document.getElementById('myImg02').style.top) - 10 +'px'     //arrow up
 
@@ -234,26 +238,13 @@ document.getElementById('myImg02').style.left = '0px'
 <img id="block06" src="portal.gif" style="position:absolute; left:1400px; top:10px; width:50; height:50;">
 
 
-<table id="myTable"><tr><td></td><td>
-
-<input type=button value="Up" onclick="{
-document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 +'px'
-}">
-</td>
-</tr>
-	<tr><td>
 
 
-<input type=button value="Left" onclick="{
-document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 +'px'
-}">
+
+<input type=button value="start" onclick="{
 
 
-</td>
-<td> <input type=button value="Reset" onclick="{
 
-myStart = new Date().getTime()
-let myEnd = new Date().getTime()
 document.getElementById('myImg01').style.top = '200px'
 document.getElementById('myImg01').style.left = '1000px'
 document.getElementById('myImg02').style.top = '200px'
@@ -263,35 +254,35 @@ treasureScore = 0
 score=0
 
 
-document.getElementById('myDiv1').innerHTML = `BMO Score : ` +score
+document.getElementById('myDiv1').innerHTML = `Fire Boi Score : ` +score
 
 
-document.getElementById('myDiv2').innerHTML = `Treasure Score : ` +treasureScore
+document.getElementById('myDiv2').innerHTML = `Flower Score : ` +treasureScore
 
 
-}">
-</td><td>
 
 
-<input type=button value="Right" onclick="{
-document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 +'px'
-}">
+function setTime() {
+++totalSeconds;
+secondsLabel.innerHTML = pad(totalSeconds % 60);
+minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
 
-</td>
-</tr>
-<tr><td></td><td>
+function pad(val) {
+var valString = val + '';
+if (valString.length < 2) {
+  return '0' + valString;
+} else {
+  return valString;
+}
+}
 
-<input type=button value="Down" onclick="{
-document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 +'px'
-}">
+}"><br>
 
 
-</td></tr>
 
-
-</table>
-
-<div id="myDiv">..</div>
+<label id="minutes"style="font-size: 150%">00</label>:<label id="seconds"style="font-size: 150%">00</label>
 
 <div id="myDiv1">0</div>
 <div id="myDiv2">0</div>
+</body>
