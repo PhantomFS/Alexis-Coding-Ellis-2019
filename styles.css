@@ -47,7 +47,16 @@ font-size: 15px;
 
 
 }
+.text_css{
 
+background-color: #232423;
+
+color:#2a5c2a;
+    border:none;
+font-size: 15px;
+
+
+}
 
 
 .button_css{

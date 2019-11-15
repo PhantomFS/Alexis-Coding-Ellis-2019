@@ -1,0 +1,79 @@
+<head>
+
+  <link rel="stylesheet" href="styles.css">
+  <title>Classes</title>
+</head>
+<body>
+<h1>Classes </h1>
+
+<input type=text class="text_css" id="myNameInput" placeholder="Enter your name here" value="">
+<input type=text class="text_css" id="myLastName" placeholder="Enter your last name here" value="">
+<input type=text class="text_css" id="myAge" placeholder="Enter your age here" value="">
+<input type=text class="text_css" id="myBodyTemp" placeholder="Enter your tempurature here" value="">
+
+<input id="myButton130" class="button_css" type="button" value="myClass" onclick="{
+                                                                          
+ class myClass {
+    constructor(passName, passAge, passLast, passTemp) {
+       this.myName = passName;
+       this.myAge = passAge;
+       this.myLast = passLast;
+       this.myTemp = passTemp;
+    }
+    myShow(){ 
+        if(this.myTemp >= 36 && this.myTemp <= 37.5){   
+            document.getElementById('myDiv1').innerHTML = 'Hello '+ this.myName + ' '+ this.myLast+'. You are ' + this.myAge + ' years old. You have a normal body tempurature of '+ this.myTemp+'. <br>'
+        }
+        else{
+            document.getElementById('myDiv1').innerHTML = 'Hello '+ this.myName + ' '+ this.myLast+'. PLease go to the hospital immediatly, you are going to die. Youre tempurature is '+this.myTemp+'<br>'
+        }
+
+        if(this.myAge >100){   
+            document.getElementById('myDiv1').innerHTML += 'Hello, '+this.myName+'. How are you alive? You are '+this.myAge+'!! <br>'
+        }
+            
+        else if(this.myAge <= 5){   
+            document.getElementById('myDiv1').innerHTML += 'Hey, I think you are a little young to be on the internet, you are only '+this.myAge+'. <br>'
+        }
+    }
+ }  // end class myH
+  
+
+
+
+myHealth= new myClass(document.getElementById('myNameInput').value, document.getElementById('myAge').value, document.getElementById('myLastName').value, document.getElementById('myBodyTemp').value)
+myHealth.myShow()                                             
+}">
+<input type= button value="clear" class="button_css" onclick="{
+
+    document.getElementById('myDiv1').innerHTML = ''
+
+}">
+
+<br><br>
+
+<div id='myDiv1'>...</div><br><br><br>
+<input type=text class="text_css" id="myNameInput6" placeholder="Enter A message" value="">
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+<input  type="button" class="button_css" value="Use ResponsiveCode" onclick="{   
+    a = document.getElementById('pitch').value   
+    b = document.getElementById('rate').value 
+    c = document.getElementById('volume').value 
+    responsiveVoice.speak(document.getElementById('myNameInput6').value, 'US English Female', {pitch:a, rate: b, volume:c})                                              
+}"><br>
+<input  type="button" class="button_css" value="More Options" onclick="{  
+    document.getElementById('pitch').style.visibility = 'visible' 
+    document.getElementById('rate').style.visibility = 'visible' 
+    document.getElementById('volume').style.visibility = 'visible' 
+}">
+<br><br><br>
+
+<input type=number id="pitch" value=1 max=5 min=0.5 step=0.5 style="visibility:hidden">
+<input type=number id="rate" value=1 max=5 min=0.5 step=0.5 style="visibility:hidden">
+<input type=number id="volume" value=1 max=5 min=0.5 step=0.5 style="visibility:hidden">
+
+
+
+
+</body>
