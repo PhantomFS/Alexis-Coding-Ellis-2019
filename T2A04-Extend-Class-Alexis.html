@@ -1,0 +1,101 @@
+<head>
+
+ 
+  <title>Classes</title>
+</head>
+<body>
+<h1>Classes </h1>
+<script>
+ class myPet {
+    constructor(passName, passAge, passType, passColour) {
+       this.myName = passName;
+       this.myAge = passAge;
+       this.myType = passType;
+       this.myColour = passColour;
+    }
+    myShow(){ 
+        if(this.myAge >0 && this.myAge <25 ){
+            document.getElementById('myDiv1').innerHTML = 'Hello, Janice`s '+ this.myType + ' is named '+ this.myName+'. They are ' + this.myAge + ' years old. They have a nice '+ this.myColour+' coat. <br>'
+        }
+        if(this.myAge <0 || this.myAge >25 ){
+            document.getElementById('myDiv1').innerHTML = 'Hello, Janice`s '+ this.myType + ' is named '+ this.myName+'. They are the impossible age of ' + this.myAge + '. They have a nice '+ this.myColour+' coat. <br>'
+        }
+
+    }
+ } 
+</script>
+<input id="myButton130" class="button_css" type="button" value="Janice's pet" onclick="{
+
+Janice= new myPet('Snowball', '6', 'cat', 'white')
+Janice.myShow()                                             
+}">
+
+
+<input id="myButton1" class="button_css" type="button" value="Dave's pet" onclick="{
+class myDPet extends myPet {
+
+    myShow(){
+
+        document.getElementById('myDiv1').innerHTML = 'Hello, Dave`s turtle is named '+ this.myName+'. They are the impossible age of ' + this.myAge + '. They have a beautiful '+ this.myColour+' shell. <br>'
+
+    }
+
+}
+Dave= new myDPet('Pancake', '45', 'turtle', 'green')
+Dave.myShow()                                             
+}">
+<input id="myButton2" class="button_css" type="button" value="Carl's pet" onclick="{
+class myCPet extends myPet {
+
+    myShow(){
+
+        document.getElementById('myDiv1').innerHTML = 'Hello, Carl`s dog is named '+ this.myName+'. They are ' + this.myAge + ' years old. They have a shiney '+ this.myColour+' coat. <br>'
+
+    }
+
+}
+Carl= new myCPet('Charlie', '6', 'dog', 'blond')
+Carl.myShow()                                             
+}">
+<input id="myButton3" class="button_css" type="button" value="Betty's pet" onclick="{
+class myBPet extends myPet {
+
+    myShow(){
+
+        document.getElementById('myDiv1').innerHTML = 'Hello, Betty`s green tree python is named '+ this.myName+'. They are ' + this.myAge + '. They have smooth '+ this.myColour+' scales. <br>'
+
+    }
+
+}
+Betty= new myBPet('Doug', '6', 'snake', 'green')
+Betty.myShow()                                             
+}">
+<input type= button value="clear" class="button_css" onclick="{
+
+    document.getElementById('myDiv1').innerHTML = ''
+
+}">
+
+<br><br>
+
+<div id='myDiv1'>...</div><br><br><br>
+
+<input type=text class="text_css" id="name" placeholder="Enter your pet's name here" value="">
+<input type=text class="text_css" id="catdog" placeholder="Enter whether your pet is" value="">
+<input type=text class="text_css" id="age" placeholder="Enter your pet's age here" value="">
+<input type=text class="text_css" id="colour" placeholder="Enter your pet's hair colour here" value="">
+<input id="myButton3" class="button_css" type="button" value="Your pet" onclick="{
+class myYPet extends myPet {
+
+    myShow(){
+
+        document.getElementById('myDiv1').innerHTML = 'Hello, your pet is named '+ this.myName+'. They are ' + this.myAge + '-year-old '+this.myType+'. They have nice '+ this.myColour+' coat. <br>'
+
+    }
+
+}
+Your= new myYPet(document.getElementById('name').value, document.getElementById('age').value, document.getElementById('catdog').value, document.getElementById('colour').value)
+Your.myShow()                                             
+}">
+
+</body>
