@@ -1,0 +1,296 @@
+<body style="background-image: url('bg.png');
+  background-repeat: no-repeat;  background-size: cover;color:white" >
+
+<h3 align=center> gifs </h3>
+<script type="text/javascript">
+
+
+function PlaySound() {
+    let sound = new Audio('Swords_Collide_Sound_Explorer-2015600826.mp3')
+
+  sound.play();
+}
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+let treasureScore = 0
+
+let score=0
+
+myStart = new Date().getTime()
+
+document.onkeydown = checkKey;
+
+function checkKey(myEventA) {
+   let myEnd = new Date().getTime()
+   let myDuration = Math.round((myEnd-myStart)/1000)
+
+
+   if (myHitOther('myImg01','myImg02')){
+myStart = new Date().getTime()
+let myEnd = new Date().getTime()
+
+document.getElementById('myImg01').style.top = '200px'
+document.getElementById('myImg01').style.left = '1000px'
+document.getElementById('myImg02').style.top = '200px'
+document.getElementById('myImg02').style.left = '500px'
+
+score = score+1
+PlaySound();
+
+document.getElementById('myDiv1').innerHTML = `Fire Score : ` +score
+
+
+
+   }
+
+
+
+
+
+
+
+if (myHitOther('myImg01','block01')){
+document.getElementById('myImg01').style.top = '10px'
+document.getElementById('myImg01').style.left = '1470px'
+}
+
+else if (myHitOther('myImg01','block02')){
+document.getElementById('myImg01').style.top = '40px'
+document.getElementById('myImg01').style.left = '670px'
+}
+else if (myHitOther('myImg01','block03')){
+document.getElementById('myImg01').style.top = '400px'
+document.getElementById('myImg01').style.left = '1170px'
+}
+else if (myHitOther('myImg01','block04')){
+document.getElementById('myImg01').style.top = '700px'
+document.getElementById('myImg01').style.left = '120px'
+}
+else if (myHitOther('myImg01','block05')){
+document.getElementById('myImg01').style.top = '250px'
+document.getElementById('myImg01').style.left = '75px'
+}
+else if (myHitOther('myImg01','block06')){
+document.getElementById('myImg01').style.top = '570px'
+document.getElementById('myImg01').style.left = '440px'
+}
+
+
+
+
+
+if (myHitOther('myImg02','block01')){
+document.getElementById('myImg02').style.top = '10px'
+document.getElementById('myImg02').style.left = '1470px'
+}
+
+else if (myHitOther('myImg02','block02')){
+document.getElementById('myImg02').style.top = '40px'
+document.getElementById('myImg02').style.left = '670px'
+}
+else if (myHitOther('myImg02','block03')){
+document.getElementById('myImg02').style.top = '400px'
+document.getElementById('myImg02').style.left = '1170px'
+}
+else if (myHitOther('myImg02','block04')){
+document.getElementById('myImg02').style.top = '700px'
+document.getElementById('myImg02').style.left = '120px'
+}
+else if (myHitOther('myImg02','block05')){
+document.getElementById('myImg02').style.top = '250px'
+document.getElementById('myImg02').style.left = '75px'
+}
+else if (myHitOther('myImg02','block06')){
+document.getElementById('myImg02').style.top = '570px'
+document.getElementById('myImg02').style.left = '440px'
+}
+
+
+
+
+if(myDuration >= 30){
+myStart = new Date().getTime()
+let myEnd = new Date().getTime()
+
+
+alert('The Flower Got Away.')
+document.getElementById('myImg01').style.top = '200px'
+document.getElementById('myImg01').style.left = '1000px'
+document.getElementById('myImg02').style.top = '200px'
+document.getElementById('myImg02').style.left = '500px'
+
+treasureScore = treasureScore+1
+
+document.getElementById('myDiv2').innerHTML = `Flower Score : ` +treasureScore
+}
+
+
+
+
+
+
+if (myEventA.keyCode == 87){document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 +'px'     //w up
+document.getElementById('myImg01').src = 'fireboiback.gif'
+}
+if (myEventA.keyCode == 65){ document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) - 10 +'px'  //a left
+document.getElementById('myImg01').style.transform= 'rotate(0deg)'
+document.getElementById('myImg01').src = 'fireboi.gif'
+}
+if (myEventA.keyCode == 68){ document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 +'px'  //d right
+document.getElementById('myImg01').style.transform= 'scaleX(-1)'
+document.getElementById('myImg01').src = 'fireboi.gif'
+}
+if (myEventA.keyCode == 83){document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 +'px'     //s down
+document.getElementById('myImg01').src = 'fireboifront.gif'
+}
+if (myEventA.keyCode == 38){document.getElementById('myImg02').style.top = parseInt(document.getElementById('myImg02').style.top) - 10 +'px'     //arrow up
+
+}
+if (myEventA.keyCode == 37){ document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) - 10 +'px'  //arrow left
+
+}
+if (myEventA.keyCode == 39){ document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + 10 +'px'  //arrow right
+
+}
+if (myEventA.keyCode == 40){document.getElementById('myImg02').style.top = parseInt(document.getElementById('myImg02').style.top) + 10 +'px'    //arrow down
+
+}
+
+
+
+
+if (document.getElementById('myImg01').style.top == '0px'){
+document.getElementById('myImg01').style.top = '720px'
+}
+
+else if (document.getElementById('myImg01').style.top == '720px'){
+document.getElementById('myImg01').style.top = '0px'
+}
+
+else if (document.getElementById('myImg01').style.left == '0px'){
+document.getElementById('myImg01').style.left = '1500px'
+}
+
+else if (document.getElementById('myImg01').style.left == '1500px'){
+document.getElementById('myImg01').style.left = '0px'
+}
+
+
+
+
+
+
+
+
+
+
+if (document.getElementById('myImg02').style.top == '0px'){
+document.getElementById('myImg02').style.top = '720px'
+}
+
+else if (document.getElementById('myImg02').style.top == '720px'){
+document.getElementById('myImg02').style.top = '0px'
+}
+
+else if (document.getElementById('myImg02').style.left == '0px'){
+document.getElementById('myImg02').style.left = '1500px'
+}
+
+else if (document.getElementById('myImg02').style.left == '1500px'){
+document.getElementById('myImg02').style.left = '0px'
+}
+
+
+
+
+
+}
+
+
+</script>
+
+<embed src="Swords_Collide_Sound_Explorer-2015600826.mp3" autostart="false" width="0" height="0" id="sound1"
+enablejavascript="true">
+
+<img id="myImg01" width=40 src="fireboi.gif" style="position:absolute; left:1000px; top:200px;width:75; height:75;">
+<img id="myImg02" width=90 src="flower.gif" style="position:absolute; left:500px; top:200px; width:50; height:50;">
+
+
+
+
+<img id="block01" src="portal.gif" style="position:absolute; left:600px; top:40px; width:50; height:50;">
+
+<img id="block02" src="portal.gif" style="position:absolute; left:1100px; top:400px; width:50; height:50;">
+
+<img id="block03" src="portal.gif" style="position:absolute; left:50px; top:700px; width:50; height:50;">
+
+<img id="block04" src="portal.gif" style="position:absolute; left:5px; top:250px; width:50; height:50;">
+
+<img id="block05" src="portal.gif" style="position:absolute; left:370px; top:570px; width:50; height:50;">
+
+<img id="block06" src="portal.gif" style="position:absolute; left:1400px; top:10px; width:50; height:50;">
+
+
+
+
+
+<input type=button value="start" onclick="{
+
+
+
+document.getElementById('myImg01').style.top = '200px'
+document.getElementById('myImg01').style.left = '1000px'
+document.getElementById('myImg02').style.top = '200px'
+document.getElementById('myImg02').style.left = '500px'
+treasureScore = 0
+
+score=0
+
+
+document.getElementById('myDiv1').innerHTML = `Fire Boi Score : ` +score
+
+
+document.getElementById('myDiv2').innerHTML = `Flower Score : ` +treasureScore
+
+
+
+
+function setTime() {
+++totalSeconds;
+secondsLabel.innerHTML = pad(totalSeconds % 60);
+minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+var valString = val + '';
+if (valString.length < 2) {
+  return '0' + valString;
+} else {
+  return valString;
+}
+}
+
+}"><br>
+
+
+
+
+
+<div id="myDiv1">0</div>
+<div id="myDiv2">0</div>
+</body>
