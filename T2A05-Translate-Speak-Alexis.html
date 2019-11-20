@@ -1,0 +1,53 @@
+
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src='http://code.responsivevoice.org/responsivevoice.js'></script>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+  }
+
+</script>
+<body>
+<h1>Translate</h1>
+<textarea id='google_translate_element'>Wow </textarea>
+
+<input type="button" class="button_css" value="Speak" onclick="{
+
+    let myVoice = 'Russian Female'
+    if(document.getElementById('myvoice').value == 'Russian Female'){
+         myVoice = 'Russian Female'
+    }
+    if(document.getElementById('myvoice').value == 'American Female'){
+         myVoice = 'US English Female'
+    }
+    if(document.getElementById('myvoice').value == 'British Female'){
+         myVoice = 'UK English Female'
+    }
+    if(document.getElementById('myvoice').value == 'French Female'){
+         myVoice = 'French Female'
+    }
+
+    responsiveVoice.speak(document.getElementById('google_translate_element').value, myVoice,{pitch:document.getElementById('pitch').value, rate: document.getElementById('rate').value, volume:document.getElementById('myvoice').value})
+
+}">
+
+<input type="button" class="button_css" value="Settings" onclick="{
+
+    document.getElementById('pitch').style.visibility = 'visible'
+    document.getElementById('rate').style.visibility = 'visible'
+    document.getElementById('volume').style.visibility = 'visible'
+    document.getElementById('myvoice').style.visibility = 'visible'
+
+}"><br>
+<input type=number id="pitch" value=1 max=5 min=0.5 step=0.5 style="visibility:hidden">
+<input type=number id="rate" value=1 max=5 min=0.5 step=0.5 style="visibility:hidden">
+<input type=number id="volume" value=1 max=5 min=0.5 step=0.5 style="visibility:hidden">
+<select style="visibility:hidden" id="myvoice">
+	<option value="Russian Female">Russian Female</option>
+	<option value="American Female"> American Female</option>
+	<option value="British Female"> British Female</option>
+	<option value="French Female"> French Female </option>
+
+</select>
+</body>
