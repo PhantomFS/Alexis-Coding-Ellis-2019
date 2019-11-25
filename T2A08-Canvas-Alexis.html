@@ -26,9 +26,9 @@
             <input  type="button" class="button_css" value="Circle" onclick="{  
 
             myContext.beginPath();
-            myContext.lineWidth = 1;
-            myContext.strokeStyle='green';
-            myContext.arc(95, 50, 40, 0, 2 * Math.PI);
+            myContext.lineWidth = document.getElementById('circlewidth').value;
+            myContext.strokeStyle=document.getElementById('ColourC').value;
+            myContext.arc(document.getElementById('CenterX').value, document.getElementById('CenterY').value, document.getElementById('radius').value, 0, 2 * Math.PI);
             myContext.stroke();
 
 
@@ -36,7 +36,7 @@
         </td>
         <td>
             <input  type="button" class="button_css" value="Options" onclick="{  
-
+                document.getElementById('CircleTable').style.visibility = 'visible'
             }">        
         </td>
     </tr>
@@ -44,19 +44,16 @@
         <td>
             <input  type="button" class="button_css" value="Text" onclick="{  
 
-            myContext.font = '20px Arial'
-            myContext.fillText('Hello World',400,100)
-            myContext.translate(400,100)
-            myContext.rotate(60 * Math.PI / 180)
-            myContext.fillText('Hello World',10,10)
+            myContext.font = document.getElementById('fontSize').value+'px Arial'
+            myContext.fillText(document.getElementById('message').value,document.getElementById('StartTX').value,document.getElementById('StartTY').value)
+            myContext.fillStyle = document.getElementById('ColourT').value
             myContext.stroke();
-            myContext.resetTransform()
 
             }">
         </td>
         <td>
             <input  type="button" class="button_css" value="Options" onclick="{  
-
+                document.getElementById('TextTable').style.visibility = 'visible'
             }">        
         </td>
     </tr>
@@ -64,18 +61,17 @@
         <td>
             <input  type="button" class="button_css" value="gradient" onclick="{  
             let myGrad = myContext.createLinearGradient(100,300,200,400)
-            myGrad.addColorStop(0, 'red')
-            myGrad.addColorStop(0.5, 'blue')
-            myGrad.addColorStop(1,'yellow')
+            myGrad.addColorStop(0, document.getElementById('Colour1').value)
+            myGrad.addColorStop(1,document.getElementById('Colour2').value)
             myContext.fillStyle = myGrad
-            myContext.fillRect(100,300,200,400)
+            myContext.fillRect(document.getElementById('TLX').value,document.getElementById('TLY').value, document.getElementById('BRX').value,document.getElementById('BRY').value)
 
 
             }">
         </td>
         <td>
             <input  type="button" class="button_css" value="Options" onclick="{  
-
+                document.getElementById('GradTable').style.visibility = 'visible'
             }">        
         </td>
     </tr>
@@ -84,9 +80,10 @@
             <input  type="button" class="button_css" value="curve" onclick="{  
 
             myContext.beginPath();
-            myContext.lineWidth = 1
-            myContext.moveTo(300,100);
-            myContext.quadraticCurveTo(100,220,240,110);
+            myContext.lineWidth = document.getElementById('Clinewidth').value
+            myContext.moveTo(document.getElementById('StartCX').value,document.getElementById('StartCY').value);
+            myContext.quadraticCurveTo(document.getElementById('MidX').value,document.getElementById('MidY').value,document.getElementById('EndCX').value,document.getElementById('EndCY').value);
+            myContext.strokeStyle=document.getElementById('ColourCC').value;            
             myContext.stroke();
 
 
@@ -94,7 +91,7 @@
         </td>
         <td>
             <input  type="button" class="button_css" value="Options" onclick="{  
-
+            document.getElementById('CurveTable').style.visibility = 'visible'
             }">        
         </td>
     </tr>
@@ -102,23 +99,27 @@
         <td>
             <input  type="button" class="button_css" value="clear rectangle" onclick="{  
 
-            myContext.clearRect(100,300,200,400)
+            myContext.clearRect(document.getElementById('CTLX').value,document.getElementById('CTLY').value,document.getElementById('CBRX').value,document.getElementById('CBRY').value)
 
 
             }">
         </td>
         <td>
             <input  type="button" class="button_css" value="Options" onclick="{  
-
+                document.getElementById('ClearTable').style.visibility = 'visible'
             }">        
         </td>
     </tr>
 </table>
 
 
+<table id="grandTable">
 
 
-<table id="LineTable" style="visibility:hidden">
+<tr>
+<td>
+
+<table id="LineTable" style="visibility:hidden;">
     <tr>
         <td>Width
         </td>
@@ -128,14 +129,14 @@
     <tr>
         <td>Starting Point
         </td>
-        <td><input type=number id="StartX" value=20 min=1 max=100></td>
-        <td><input type=number id="StartY" value=10 min=1 max=100></td>
+        <td><input type=number id="StartX" value=20 min=1 max=1000></td>
+        <td><input type=number id="StartY" value=10 min=1 max=1000></td>
     </tr>
     <tr>
         <td>End Point
         </td>
-        <td><input type=number id="EndX" value=30 min=1 max=100></td>
-        <td><input type=number id="EndY" value=200 min=1 max=100></td>
+        <td><input type=number id="EndX" value=30 min=1 max=1000></td>
+        <td><input type=number id="EndY" value=200 min=1 max=1000></td>
     </tr>
     <tr>
         <td>Color
@@ -143,10 +144,162 @@
         <td><input type=text id="Colour" value='black'></td>
     </tr>
 </table>
+</td>
+<td>
+
+<table id="CircleTable" style="visibility:hidden;">
+    <tr>
+        <td>Width
+        </td>
+        <td><input type=number id="circlewidth" value=1 min=1 >
+        </td>
+    </tr>
+    <tr>
+        <td>Starting Point
+        </td>
+        <td><input type=number id="CenterX" value=95 min=1 max=1000></td>
+        <td><input type=number id="CenterY" value=50 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Radius
+        </td>
+        <td><input type=number id="radius" value=40 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Color
+        </td>
+        <td><input type=text id="ColourC" value='black'></td>
+    </tr>
+</table>
+
+
+
+</td>
+<td>
+
+
+<table id="TextTable" style="visibility:hidden;">
+    <tr>
+        <td>Size
+        </td>
+        <td><input type=number id="fontSize" value=20 min=2 >
+        </td>
+    </tr>
+    <tr>
+        <td>Starting Point
+        </td>
+        <td><input type=number id="StartTX" value=20 min=1 max=1000></td>
+        <td><input type=number id="StartTY" value=10 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Message
+        </td>
+        <td><input type=text value="Hello world" id="message"></td>
+    </tr>
+    <tr>
+        <td>Color
+        </td>
+        <td><input type=text id="ColourT" value='black'></td>
+    </tr>
+</table>
 
 
 
 
+</td>
+</tr>
+
+<tr>
+<td>
+
+
+<table id="GradTable" style="visibility:hidden;">
+
+    <tr>
+        <td>Top Left Corner
+        </td>
+        <td><input type=number id="TLX" value=100 min=1 max=1000></td>
+        <td><input type=number id="TLY" value=300 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Bottom Right
+        </td>
+        <td><input type=number id="BRX" value=200 min=1 max=1000></td>
+        <td><input type=number id="BRY" value=400 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Color
+        </td>
+        <td><input type=text id="Colour1" value='black'></td>
+        <td><input type=text id="Colour2" value='White'></td>
+    </tr>
+</table>
+
+
+
+</td>
+<td>
+
+
+<table id="CurveTable" style="visibility:hidden;">
+    <tr>
+        <td>Width
+        </td>
+        <td><input type=number id="Clinewidth" value=1 min=1 >
+        </td>
+    </tr>
+    <tr>
+        <td>Starting Point
+        </td>
+        <td><input type=number id="StartCX" value=20 min=1 max=1000></td>
+        <td><input type=number id="StartCY" value=10 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>End Point
+        </td>
+        <td><input type=number id="EndCX" value=240 min=1 max=1000></td>
+        <td><input type=number id="EndCY" value=110 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Middle Point
+        </td>
+        <td><input type=number id="MidX" value=100 min=1 max=1000></td>
+        <td><input type=number id="MidY" value=220 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Color
+        </td>
+        <td><input type=text id="ColourCC" value='black'></td>
+    </tr>
+</table>
+
+
+</td>
+<td>
+
+
+<table id="ClearTable" style="visibility:hidden;">
+    <tr>
+        <td>Top Left Corner
+        </td>
+        <td><input type=number id="CTLX" value=100 min=1 max=1000></td>
+        <td><input type=number id="CTLY" value=300 min=1 max=1000></td>
+    </tr>
+    <tr>
+        <td>Bottom Right
+        </td>
+        <td><input type=number id="CBRX" value=200 min=1 max=1000></td>
+        <td><input type=number id="CBRY" value=400 min=1 max=1000></td>
+    </tr>
+</table>
+
+
+
+
+</td>
+</tr>
+
+</table>
 
 
 
