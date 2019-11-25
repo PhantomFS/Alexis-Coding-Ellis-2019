@@ -1,0 +1,168 @@
+<h1>Time to Draw.</h1>
+
+<table>
+    <tr>
+        <td>
+            <input  type="button" class="button_css" value="Line Example" onclick="{  
+
+            myContext.beginPath();
+            myContext.lineWidth = document.getElementById('linewidth').value
+            myContext.moveTo(document.getElementById('StartX').value,document.getElementById('StartY').value);
+            myContext.lineTo(document.getElementById('EndX').value,document.getElementById('EndY').value);
+            myContext.strokeStyle=document.getElementById('Colour').value;
+            myContext.stroke();
+
+
+            }">
+        </td>
+        <td>
+            <input  type="button" class="button_css" value="Options" onclick="{  
+                document.getElementById('LineTable').style.visibility = 'visible'
+            }">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input  type="button" class="button_css" value="Circle" onclick="{  
+
+            myContext.beginPath();
+            myContext.lineWidth = 1;
+            myContext.strokeStyle='green';
+            myContext.arc(95, 50, 40, 0, 2 * Math.PI);
+            myContext.stroke();
+
+
+            }">
+        </td>
+        <td>
+            <input  type="button" class="button_css" value="Options" onclick="{  
+
+            }">        
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input  type="button" class="button_css" value="Text" onclick="{  
+
+            myContext.font = '20px Arial'
+            myContext.fillText('Hello World',400,100)
+            myContext.translate(400,100)
+            myContext.rotate(60 * Math.PI / 180)
+            myContext.fillText('Hello World',10,10)
+            myContext.stroke();
+            myContext.resetTransform()
+
+            }">
+        </td>
+        <td>
+            <input  type="button" class="button_css" value="Options" onclick="{  
+
+            }">        
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input  type="button" class="button_css" value="gradient" onclick="{  
+            let myGrad = myContext.createLinearGradient(100,300,200,400)
+            myGrad.addColorStop(0, 'red')
+            myGrad.addColorStop(0.5, 'blue')
+            myGrad.addColorStop(1,'yellow')
+            myContext.fillStyle = myGrad
+            myContext.fillRect(100,300,200,400)
+
+
+            }">
+        </td>
+        <td>
+            <input  type="button" class="button_css" value="Options" onclick="{  
+
+            }">        
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input  type="button" class="button_css" value="curve" onclick="{  
+
+            myContext.beginPath();
+            myContext.lineWidth = 1
+            myContext.moveTo(300,100);
+            myContext.quadraticCurveTo(100,220,240,110);
+            myContext.stroke();
+
+
+}">
+        </td>
+        <td>
+            <input  type="button" class="button_css" value="Options" onclick="{  
+
+            }">        
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input  type="button" class="button_css" value="clear rectangle" onclick="{  
+
+            myContext.clearRect(100,300,200,400)
+
+
+            }">
+        </td>
+        <td>
+            <input  type="button" class="button_css" value="Options" onclick="{  
+
+            }">        
+        </td>
+    </tr>
+</table>
+
+
+
+
+<table id="LineTable" style="visibility:hidden">
+    <tr>
+        <td>Width
+        </td>
+        <td><input type=number id="linewidth" value=1 min=1 >
+        </td>
+    </tr>
+    <tr>
+        <td>Starting Point
+        </td>
+        <td><input type=number id="StartX" value=20 min=1 max=100></td>
+        <td><input type=number id="StartY" value=10 min=1 max=100></td>
+    </tr>
+    <tr>
+        <td>End Point
+        </td>
+        <td><input type=number id="EndX" value=30 min=1 max=100></td>
+        <td><input type=number id="EndY" value=200 min=1 max=100></td>
+    </tr>
+    <tr>
+        <td>Color
+        </td>
+        <td><input type=text id="Colour" value='black'></td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+<br>
+<input  type="button" class="button_css" value="clear all" onclick="{  
+
+myContext.clearRect(0,0,myCanvas.width,myCanvas.height)
+
+
+}">
+
+<canvas id="mycanvas" width="1000"height="1000" style="border:1px solid black;"></canvas>
+<script>
+
+
+let myCanvas = document.getElementById('mycanvas');
+let myContext = myCanvas.getContext('2d')
+
+</script>
