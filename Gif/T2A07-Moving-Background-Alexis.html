@@ -1,0 +1,49 @@
+<body id="myBody"style="background-repeat: repeat; background-size: 90%;" background="forest (1).gif">
+<script>
+let myClock
+let myMove=0
+let myTime
+let myPos = '0px,00px'
+
+</script>
+<input id="myButton01"type=button value="BG Left" onclick="{
+
+
+myMove += 5
+
+myPos = '-' + myMove + 'px, 0px'
+
+document.getElementById('myBody').style.backgroundPosition = myPos
+}">
+
+
+
+
+<input type=button value="BGRight" id="myButton3"onclick="{
+
+
+myMove += 5
+
+myPos = myMove + 'px, 0px'
+
+document.getElementById('myBody').style.backgroundPosition = myPos
+}">
+
+<input type=button value="AutoBG left" onclick="{
+
+  //clearInterval(myTime)
+ myTime = setInterval(function(){document.getElementById('myButton01').click()}, 100)
+
+
+
+
+}">
+<input type=button value="AutoBG right" onclick="{
+
+  //clearInterval(myTime)
+ myTime = setInterval(function(){document.getElementById('myButton3').click()}, 100)
+
+
+
+
+}">
