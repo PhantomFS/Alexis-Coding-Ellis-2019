@@ -1,0 +1,223 @@
+<body id="myBod" onload="{
+
+   myStorage1 = localStorage.getItem('myStoredText1')
+   if(myStorage1  != null){
+      document.getElementById('myInput01').value = myStorage1
+    }
+
+    myStorage2 = localStorage.getItem('myStoredText2')
+    if(myStorage2  != null){
+       document.getElementById('myInput02').value = myStorage2
+
+    }
+       myStorage3 = localStorage.getItem('myStoredText3')
+   if(myStorage3  != null){
+      document.getElementById('myInput03').value = myStorage3
+    }
+
+    myStorage4 = localStorage.getItem('myStoredText4')
+    if(myStorage4  != null){
+       document.getElementById('myInput04').value = myStorage4
+
+    }
+
+
+}">
+
+<h1 id="h1">stoarge</h1><br><br>
+
+
+
+
+
+<h1 id="h2">Medical Checkup</h1>
+<br><br>
+<input type="text" placeholder="First Name" id="myInput01">
+<input type="text" placeholder="Last Name" id="myInput02">
+<input type="text" placeholder="Age" id="myInput03">
+<input type="text" placeholder="Body Temp (Celcius)" id="myInput04">
+<br>
+<input type="button" value="Store" id="button07" onclick="{
+
+   localStorage.setItem('myStoredText1', document.getElementById('myInput01').value)
+   localStorage.setItem('myStoredText2', document.getElementById('myInput02').value)
+   localStorage.setItem('myStoredText3', document.getElementById('myInput03').value)
+   localStorage.setItem('myStoredText4', document.getElementById('myInput04').value)
+
+
+}"> <br>
+<div>
+  <input type="checkbox" id="Headache" name="Headache">
+  <label id="Headname"for="Headache">Headache</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Sorethroat" name="Sorethroat">
+  <label id="Sorename"for="Sorethroat">Sore Throat</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Nauseous" name="Nauseous">
+  <label id="Nausname"for="Nauseous">Nauseous</label>
+</div>
+
+<div>
+  <input type="checkbox" id="LightHeaded" name="LightHeaded">
+  <label id="Lightname"for="LightHeaded">Light Headed</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Dehydrated" name="Dehydrated">
+  <label id="Dehyname"for="Dehydrated">Dehydrated</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Cough" name="Cough">
+  <label id="Coughname"for="Cough">Cough</label>
+</div>
+
+
+<input type="button" value="Submit" id="button06" onclick='{
+
+let myPatient = {
+
+"firstName":"John",
+"lastName":"Smith",
+"age":"20",
+"bodyTemp":"37"
+}
+myPatient.firstName = document.getElementById("myInput01").value
+myPatient.lastName = document.getElementById("myInput02").value
+myPatient.age = document.getElementById("myInput03").value
+myPatient.bodyTemp = document.getElementById("myInput04").value
+let myArray=[]
+
+if(parseInt(myPatient.bodyTemp)>= 37.5){
+
+    if(document.getElementById(`Cough`).checked==true){
+
+        myArray[0] = 1
+
+
+    }
+        if(document.getElementById(`LightHeaded`).checked==true){
+
+        myArray[1] = 1
+
+
+    }
+
+    if(document.getElementById(`Dehydrated`).checked==true){
+
+        myArray[2] = 1
+
+
+    }
+    if(document.getElementById(`Nauseous`).checked==true){
+
+        myArray[3] = 1
+
+
+    }
+    if(document.getElementById(`Sorethroat`).checked==true){
+
+        myArray[4] = 1
+
+
+    }
+    if(document.getElementById(`Headache`).checked==true){
+
+        myArray[5] = 1
+
+
+    }
+
+
+
+    if(myArray[0]==1 && myArray[4]==1 && myArray[5]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You got a nasty cold, Mr.`+myPatient.lastName
+
+
+    }
+    if(myArray[1]==1 && myArray[2]==1 && myArray[3]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You got heat stroke, Mr.`+myPatient.lastName
+
+
+    }
+        if(myArray[3]==1 && myArray[4]==1 && myArray[2]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You got the flu, Mr.`+myPatient.lastName
+
+
+    }
+        if(myArray[0]==1 && myArray[1]==1 && myArray[2]==1 && myArray[3]==1 && myArray[4]==1 && myArray[5]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon, Mr.`+myPatient.lastName
+
+
+    }
+}
+
+if(parseInt(myPatient.bodyTemp)>= 40 || parseInt(myPatient.bodyTemp)< 35){
+document.body.style.backgroundColor = `red`
+
+document.getElementById(`myDiv02`).style.visibility=`hidden`
+document.getElementById(`myDiv01`).style.visibility=`hidden`
+document.getElementById(`myInput01`).style.visibility=`hidden`
+document.getElementById(`myInput02`).style.visibility=`hidden`
+document.getElementById(`myInput03`).style.visibility=`hidden`
+document.getElementById(`myInput04`).style.visibility=`hidden`
+document.getElementById(`myTextA01`).style.visibility=`hidden`
+document.getElementById(`button01`).style.visibility=`hidden`
+document.getElementById(`button02`).style.visibility=`hidden`
+document.getElementById(`button03`).style.visibility=`hidden`
+document.getElementById(`button04`).style.visibility=`hidden`
+document.getElementById(`button05`).style.visibility=`hidden`
+document.getElementById(`button06`).style.visibility=`hidden`
+document.getElementById(`Headache`).style.visibility=`hidden`
+document.getElementById(`Sorethroat`).style.visibility=`hidden`
+document.getElementById(`Nauseous`).style.visibility=`hidden`
+document.getElementById(`LightHeaded`).style.visibility=`hidden`
+document.getElementById(`Dehydrated`).style.visibility=`hidden`
+document.getElementById(`Cough`).style.visibility=`hidden`
+document.getElementById(`Headname`).style.visibility=`hidden`
+document.getElementById(`Sorename`).style.visibility=`hidden`
+document.getElementById(`Nausname`).style.visibility=`hidden`
+document.getElementById(`Lightname`).style.visibility=`hidden`
+document.getElementById(`Dehyname`).style.visibility=`hidden`
+document.getElementById(`Coughname`).style.visibility=`hidden`
+
+document.getElementById(`h1`).innerHTML= myPatient.firstName+ ` GO TO THE HOSPITAL `
+document.getElementById(`h2`).innerHTML= myPatient.firstName+` GO TO THE HOSPITAL `
+}
+
+if(parseInt(myPatient.bodyTemp)>= 35 && parseInt(myPatient.bodyTemp) <= 37){
+
+
+        if(myArray[0]==1 && myArray[1]==1 && myArray[2]==1 && myArray[3]==1 && myArray[4]==1 && myArray[5]==1){
+
+        document.getElementById(`myDiv02`).innerHTML= `You gonna die very soon but at least you dont have a fever, Mr.`+myPatient.lastName
+
+
+    }
+    else {
+        document.getElementById(`myDiv02`).innerHTML= `Eh, Youll be fine, Mr.`+myPatient.lastName
+
+
+    }
+
+
+
+}
+
+}'>
+<br><br>
+
+<div id="myDiv02">...</div>
+
+
+
+
+</body>
