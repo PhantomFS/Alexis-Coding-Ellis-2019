@@ -102,6 +102,24 @@ myString[myLoop] = 'z'
 else if (myString[myLoop] == 'z'){
 myString[myLoop] = 'a'
 }
+else if (myString[myLoop] == '.'){
+myString[myLoop] = ' '
+}
+else if (myString[myLoop] == '!'){
+myString[myLoop] = ','
+}
+else if (myString[myLoop] == ','){
+myString[myLoop] = '.'
+}
+else if (myString[myLoop] == ' '){
+myString[myLoop] = '!'
+}
+else if (myString[myLoop] == '?'){
+myString[myLoop] = ';'
+}
+else if (myString[myLoop] == ';'){
+myString[myLoop] = '?'
+}
 
 
 }
@@ -688,10 +706,24 @@ myString[myLoop] = 'x'
 else if (myString[myLoop] == 'z'){
 myString[myLoop] = 'y'
 }
+else if (myString[myLoop] == ' '){
+myString[myLoop] = '.'
+}
+else if (myString[myLoop] == ','){
+myString[myLoop] = '!'
+}
+else if (myString[myLoop] == '.'){
+myString[myLoop] = ','
+}
 else if (myString[myLoop] == '!'){
 myString[myLoop] = ' '
 }
-
+else if (myString[myLoop] == '?'){
+myString[myLoop] = ';'
+}
+else if (myString[myLoop] == ';'){
+myString[myLoop] = '?'
+}
 }
 
 document.getElementById('myTextArea02').value = myString.join('')
