@@ -1,0 +1,73 @@
+<body style="text-align:center;">
+
+
+<script>
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+let myArray = []
+myArray[0] = []
+
+let myTemp = 0
+let x = 0
+
+
+function myFun(){
+    for(let myLoop=0;myLoop<=53;myLoop++){
+
+        myArray[0][myLoop] = getRndInteger(1, 52)
+        myTemp+=myArray[0][myLoop] +', '
+
+
+    }
+
+    return myTemp
+}
+
+
+function mySort(){
+
+
+    for (let myLoop1=0;myLoop1<=52;myLoop1++){
+
+        for(let myLoop2=0;myLoop2<=52;myLoop2++){
+
+            for(let myLoop=0;myLoop<=52;myLoop++){
+
+                if(myArray[0][myLoop] >= myArray[0][myLoop+1]){
+
+                    x= myArray[0][myLoop+1] 
+                    myArray[0][myLoop+1]= myArray[0][myLoop] 
+                    myArray[0][myLoop] = x  
+
+                }   
+
+
+            }
+
+        }
+        myTemp+=myArray[0][myLoop1] +', '
+    }
+
+
+    return myTemp
+
+}
+
+
+</script>
+<h1>Sort</h1>
+<input type="button" value="random" onclick="{
+myTemp = ' '
+document.getElementById('div01').innerText = myFun()
+
+}">
+<input type="button" value="sort" onclick="{
+
+myTemp=''
+
+document.getElementById('div01').innerText = mySort()
+
+}">
+<div id="div01">...</div>
