@@ -4,7 +4,20 @@
 
 <input id="myInput" type=text size=50 value='Verb' onfocus="{
 	document.getElementById('myInput').value = ''
-}"> 
+}"
+
+
+
+    
+
+
+
+
+
+
+}"
+
+> 
 
 <input id="myInput2" type=text size=50 value='Subject' onfocus="{
 	document.getElementById('myInput2').value = ''
@@ -13,9 +26,20 @@
 
 <input type=button value="Enter" onclick="{
 
+
+
+
+
+let nA2
+let nA
 let verb = document.getElementById('myInput').value 
 let sub = document.getElementById('myInput2').value
-if(verb=='ser'||verb=='ir'){
+
+
+
+
+
+ if(verb=='ser'||verb=='ir'){
 
     if(sub=='yo'){
 
@@ -82,27 +106,27 @@ else if(verb=='dar'){
 
     if(sub=='yo'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'di'
 
     }
         if(sub=='tu'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'diste'
 
     }
         if(sub=='usted'||sub=='ella'||sub=='el'){
 
-        document.getElementById('myDiv01').innerHTML= 'Dio'
+        document.getElementById('myDiv01').innerHTML= 'dio'
 
     }
         if(sub=='nosotros'||sub=='nosotras'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'dimos'
 
     }
         if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'dieron'
 
     }
 
@@ -114,47 +138,71 @@ else if(verb=='ver'){
 
     if(sub=='yo'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'vi'
 
     }
         if(sub=='tu'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'viste'
 
     }
         if(sub=='usted'||sub=='ella'||sub=='el'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'vio'
 
     }
         if(sub=='nosotros'||sub=='nosotras'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'vimos'
 
     }
         if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
 
-        document.getElementById('myDiv01').innerHTML= '/'
+        document.getElementById('myDiv01').innerHTML= 'vieron'
 
     }
 
 
 }
 
-else{
+
+
+
+
+
+
+
+else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||verb != 'saber'||verb != 'querer'||verb != 'venir'||verb != 'andar'||verb != 'caber'||verb != 'decir'||verb != 'traer'||verb != 'producir'|| verb!= 'traducir'){
     let regular = '0'
     myString = document.getElementById('myInput').value.toLowerCase()
 
     if (document.getElementById('myInput').value.slice(myString.length-2, myString.length ) == 'ar'){
 
 
+
+
+
+
         if(sub=='yo'){
-
             regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'é'
-
-
-
             document.getElementById('myDiv01').innerHTML= regular
+
+                        if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'g'){
+                regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'ué'
+                document.getElementById('myDiv01').innerHTML= regular
+            }
+
+            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'c'){
+
+                regular = document.getElementById('myInput').value.slice(0, myString.length-3 ) + 'qué'
+                document.getElementById('myDiv01').innerHTML= regular
+            }
+            
+            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'z'){
+
+                regular = document.getElementById('myInput').value.slice(0, myString.length-3 ) + 'cé'
+                document.getElementById('myDiv01').innerHTML= regular
+            }
 
         }
         if(sub=='tu'){
@@ -179,11 +227,23 @@ else{
             document.getElementById('myDiv01').innerHTML= regular
 
         }
+
+
+
+
+
     }
 
     if (document.getElementById('myInput').value.slice(myString.length-2, myString.length ) == 'er'|| document.getElementById('myInput').value.slice(myString.length-2, myString.length ) == 'ir'){
         document.getElementById('myDiv01').innerHTML= regular
         
+
+
+
+
+
+
+
 
         if(sub=='yo'){
 
@@ -205,6 +265,18 @@ else{
             regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'ió'
             document.getElementById('myDiv01').innerHTML= regular
 
+
+
+
+            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'u'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'e'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'a'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'o'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'i'){
+
+
+                regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'yó'
+                document.getElementById('myDiv01').innerHTML= regular
+
+
+
+            }
         }
         if(sub=='nosotros'||sub=='nosotras'){
             regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'imos'
@@ -215,8 +287,21 @@ else{
             regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'ieron'
             document.getElementById('myDiv01').innerHTML= regular
 
+            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'u'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'e'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'a'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'o'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'i'){
+
+                regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'yeron'
+                document.getElementById('myDiv01').innerHTML= regular
+
+
+
+            }
+
+
         }
         
+
+
+
     }
 
 
@@ -224,7 +309,113 @@ else{
 
 
 
+} 
+
+
+    if(sub=='yo'){
+
+        nA2= 'e'
+
+    }
+    if(sub=='tu'){
+
+        nA2='iste'
+
+    }
+    if(sub=='usted'||sub=='ella'||sub=='el'){
+
+        nA2='o'
+
+    }
+    if(sub=='nosotros'||sub=='nosotras'){
+
+        nA2='imos'
+
+    }
+    if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+
+         nA2='ieron'
+
+    }
+
+
+if(verb=='estar'){
+    nA= 'estuv'
+    document.getElementById('myDiv01').innerHTML= nA+ nA2
 }
+
+
+
+if(verb=='tener'){
+    nA=  'tuv'
+    document.getElementById('myDiv01').innerHTML= nA+ nA2
+}
+if(verb=='poder'){
+    nA=  'pud'
+    document.getElementById('myDiv01').innerHTML= nA+ nA2
+}
+if(verb=='poner'){
+    nA= 'pus'
+    document.getElementById('myDiv01').innerHTML= nA+ nA2
+}
+if(verb=='saber'){
+    nA= 'sup'
+    document.getElementById('myDiv01').innerHTML= nA+ nA2
+}
+    if(verb=='caber'){
+        nA=  'cup'
+        document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+    if(verb=='traer'){
+        nA= 'traj'
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+
+            nA2= 'eron'
+
+        }
+        document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+    if(verb=='decir'){
+        nA= 'dij'
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+
+            nA2= 'eron'
+
+        }
+        document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+    if(verb=='querer'){
+        nA=  'quis'
+        document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+    if(verb=='venir'){
+        nA=  'vin'
+        document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+    if(verb=='andar'){
+       nA= 'anduv'
+       document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+    if(verb=='producir'){
+        nA= 'produj'
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+
+            nA2= 'eron'
+
+        }
+        document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+    if(verb=='traducir'){
+        nA= 'traduj'
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+
+            nA2= 'eron'
+
+        }
+        document.getElementById('myDiv01').innerHTML= nA+ nA2
+    }
+
+
 
 }"> <br>
 
