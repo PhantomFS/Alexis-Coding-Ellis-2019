@@ -176,29 +176,80 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
     let regular = '0'
     myString = document.getElementById('myInput').value.toLowerCase()
 
+    if (document.getElementById('myInput').value.slice(myString.length-2, myString.length ) == 'se'){
+
+
+        if(sub=='yo'){
+
+            regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-4 ) + 'í'
+
+
+
+            document.getElementById('myDiv01').innerHTML= regular
+
+        }
+        if(sub=='tu'){
+
+                regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-4 ) + 'iste'
+
+                document.getElementById('myDiv01').innerHTML= regular
+
+        }
+
+        if(sub=='usted'||sub=='ella'||sub=='el'){
+            regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'ió'
+            document.getElementById('myDiv01').innerHTML= regular
+
+        }
+        if(sub=='nosotros'||sub=='nosotras'){
+            regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'imos'
+            document.getElementById('myDiv01').innerHTML= regular
+
+        }
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+            regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'ieron'
+            document.getElementById('myDiv01').innerHTML= regular
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
     if (document.getElementById('myInput').value.slice(myString.length-2, myString.length ) == 'ar'){
 
 
-
+//ar
 
 
 
         if(sub=='yo'){
             regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'é'
-            document.getElementById('myDiv01').innerHTML= regular
+            document.getElementById('myDiv01').innerHTML= regular//regular
 
-                        if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'g'){
+                        if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'g'){ //loco
                 regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'ué'
                 document.getElementById('myDiv01').innerHTML= regular
             }
 
-            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'c'){
+            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'c'){//loco
 
                 regular = document.getElementById('myInput').value.slice(0, myString.length-3 ) + 'qué'
                 document.getElementById('myDiv01').innerHTML= regular
             }
             
-            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'z'){
+            if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'z'){ //loco
 
                 regular = document.getElementById('myInput').value.slice(0, myString.length-3 ) + 'cé'
                 document.getElementById('myDiv01').innerHTML= regular
@@ -240,7 +291,7 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
 
 
 
-
+//erir
 
 
 
@@ -277,6 +328,46 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
 
 
             }
+
+
+            if(verb=='consiguir'||verb=='repetir'||verb=='seguir'||verb=='preferir'||verb=='servir'){
+
+                let temp = document.getElementById('myInput').value.lastIndexOf('e')
+
+                let temp2 = document.getElementById('myInput').value.slice(0, temp)
+                let temp3 = document.getElementById('myInput').value.slice(temp+1, myString.length)
+                let temp4 = temp2 + 'i'+temp3
+
+                
+
+                regular = temp4.slice(0, myString.length-2 ) + 'ió'
+
+
+                document.getElementById('myDiv01').innerHTML= regular
+                
+            }
+
+
+            if(verb=='dormir'||verb=='morir'){
+
+                let temp = document.getElementById('myInput').value.lastIndexOf('o')
+
+                let temp2 = document.getElementById('myInput').value.slice(0, temp)
+                let temp3 = document.getElementById('myInput').value.slice(temp+1, myString.length)
+                let temp4 = temp2 + 'u'+temp3
+
+                
+
+                regular = temp4.slice(0, myString.length-2 ) + 'ió'
+
+
+                document.getElementById('myDiv01').innerHTML= regular
+                
+            }
+
+
+
+
         }
         if(sub=='nosotros'||sub=='nosotras'){
             regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'imos'
@@ -284,8 +375,58 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
 
         }
         if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+
+
+
+
+
+
             regular = document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'ieron'
             document.getElementById('myDiv01').innerHTML= regular
+
+            
+
+
+
+
+            if(verb=='consiguir'||verb=='repetir'||verb=='seguir'||verb=='preferir'||verb=='servir'){
+
+                let temp = document.getElementById('myInput').value.lastIndexOf('e')
+
+                let temp2 = document.getElementById('myInput').value.slice(0, temp)
+                let temp3 = document.getElementById('myInput').value.slice(temp+1, myString.length)
+                let temp4 = temp2 + 'i'+temp3
+
+                
+
+                regular = temp4.slice(0, myString.length-2 ) + 'ieron'
+
+
+                document.getElementById('myDiv01').innerHTML= regular
+                
+            }
+
+
+
+
+            if(verb=='dormir'||verb=='morir'){
+
+                let temp = document.getElementById('myInput').value.lastIndexOf('o')
+
+                let temp2 = document.getElementById('myInput').value.slice(0, temp)
+                let temp3 = document.getElementById('myInput').value.slice(temp+1, myString.length)
+                let temp4 = temp2 + 'u'+temp3
+
+                
+
+                regular = temp4.slice(0, myString.length-2 ) + 'ieron'
+
+
+                document.getElementById('myDiv01').innerHTML= regular
+                
+            }
+
+
 
             if(document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'u'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'e'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'a'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'o'||document.getElementById('myInput').value.charAt(document.getElementById('myInput').value.length-3) == 'i'){
 
@@ -295,6 +436,8 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
 
 
             }
+
+
 
 
         }
