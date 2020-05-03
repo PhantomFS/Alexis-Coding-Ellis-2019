@@ -849,7 +849,14 @@ if(verb=='estar'){
     nA= 'estuv'
 
     cor=nA+ nA2
+    if(check!=cor){
 
+        document.getElementById('myDiv01').innerHTML= 'That is not correct. The correct answer is: '
+
+    }
+    else {
+        document.getElementById('myDiv01').innerHTML= 'That is correct! The answer is: '
+    } 
     document.getElementById('myDiv01').innerHTML+= cor
 }
 
