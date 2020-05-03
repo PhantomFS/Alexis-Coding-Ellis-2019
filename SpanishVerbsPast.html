@@ -15,6 +15,8 @@ Code by Alexis S.
 
 
 <br>
+<table>
+<tr><td>
 <input id="myInput" type=text size=50 placeholder='Verb' > <br><br>
 
 <input id="myInput2" type=text size=50 placeholder='Subject' ><br><br>
@@ -325,7 +327,7 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
 
         if(sub=='yo'){
 
-            regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-4 ) + 'í'
+            regular = 'me '+document.getElementById('myInput').value.slice(0, myString.length-4 ) + 'í'
 
             if(check!= regular){
 
@@ -341,7 +343,7 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
         }
         if(sub=='tu'){
 
-                regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-4 ) + 'iste'
+                regular = 'te '+document.getElementById('myInput').value.slice(0, myString.length-4 ) + 'iste'
             if(check!= regular){
 
                 document.getElementById('myDiv01').innerHTML= 'That is not correct. The correct answer is: '
@@ -370,7 +372,7 @@ else if (verb != 'estar'||verb != 'tener'||verb != 'poder'||verb != 'poner'||ver
 
         }
         if(sub=='nosotros'||sub=='nosotras'){
-            regular = 'se '+document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'imos'
+            regular = 'nos '+document.getElementById('myInput').value.slice(0, myString.length-2 ) + 'imos'
             
             if(check!= regular){
 
@@ -1036,4 +1038,480 @@ if(verb=='saber'){
 
 }"> <br>
 
-<div id="myDiv01" >...</div><br>
+<div id="myDiv01" >...</div><br></td>
+<td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input id="myInput4" type=text size=50 placeholder='Verb' > <br><br>
+
+<input id="myInput5" type=text size=50 placeholder='Subject' ><br><br>
+
+<input id="myInput6" type=text size=50 placeholder='Your Answer'><br> <br>
+
+
+<input type=button value="Enter" onclick="{
+
+document.getElementById('myDiv02').innerHTML= ''
+
+let cor
+let check = document.getElementById('myInput6').value
+let nA2
+let nA
+let verb = document.getElementById('myInput4').value 
+let sub = document.getElementById('myInput5').value
+
+
+
+
+
+ if(verb=='ser'){
+
+    if(sub=='yo'||sub=='usted'||sub=='ella'||sub=='el'){
+
+        if(check!='era'){
+
+            document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+        }
+        else {
+            document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+        }
+        document.getElementById('myDiv02').innerHTML+= 'era'
+
+    }
+        if(sub=='tu'){
+
+            if(check!='eras'){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+
+        document.getElementById('myDiv02').innerHTML+= 'eras'
+
+    }
+        if(sub=='nosotros'||sub=='nosotras'){
+            if(check!='éramos'){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+        document.getElementById('myDiv02').innerHTML+= 'éramos'
+
+    }
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+            if(check!='eran'){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+        document.getElementById('myDiv02').innerHTML+= 'eran'
+
+    }
+
+
+}
+
+else if(verb=='ir'){
+
+    if(sub=='yo'||sub=='usted'||sub=='ella'||sub=='el'){
+
+            if(check!='iba'){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+        document.getElementById('myDiv02').innerHTML+= 'iba'
+
+    }
+        if(sub=='tu'){
+            if(check!='ibas'){
+
+                document.getElementById('myDiv01').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv01').innerHTML= 'That is correct! The answer is: '
+            }
+        document.getElementById('myDiv01').innerHTML+= 'ibas'
+
+    }
+
+        if(sub=='nosotros'||sub=='nosotras'){
+            if(check!='íbamos'){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+        document.getElementById('myDiv02').innerHTML+= 'íbamos'
+
+    }
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+            if(check!='iban'){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+            document.getElementById('myDiv02').innerHTML+= 'iban'
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+else if (verb != 'ser'||verb != 'ver'||verb != 'ir'){
+    let regular = '0'
+    myString = document.getElementById('myInput4').value.toLowerCase()
+
+    if (document.getElementById('myInput4').value.slice(myString.length-2, myString.length ) == 'se'){
+
+
+        if(sub=='yo'){
+
+            regular = 'me '+document.getElementById('myInput4').value.slice(0, myString.length-4 ) + 'ía'
+
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='tu'){
+
+                regular = 'te '+document.getElementById('myInput4').value.slice(0, myString.length-4 ) + 'ías'
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+                document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+
+        if(sub=='usted'||sub=='ella'||sub=='el'){
+            regular = 'se '+document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'ía'
+            
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='nosotros'||sub=='nosotras'){
+            regular = 'nos '+document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'íamos'
+            
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }            
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+            regular = 'se '+document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'ían'
+            
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }            
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    if (document.getElementById('myInput4').value.slice(myString.length-2, myString.length ) == 'ar'){
+
+
+//ar
+
+
+
+if(sub=='yo'){
+
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'aba'
+
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='tu'){
+
+                regular = document.getElementById('myInput4').value.slice(0, myString.length-4 ) + 'abas'
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+                document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+
+        if(sub=='usted'||sub=='ella'||sub=='el'){
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'aba'
+            
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='nosotros'||sub=='nosotras'){
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'ábamos'
+            
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }            
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'aban'
+            
+            if(check!= regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }            
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+
+
+
+        }
+
+
+
+
+
+    }
+
+    if (document.getElementById('myInput4').value.slice(myString.length-2, myString.length ) == 'er'|| document.getElementById('myInput').value.slice(myString.length-2, myString.length ) == 'ir'){
+        //document.getElementById('myDiv01').innerHTML+= regular
+        
+
+
+
+//erir
+
+
+
+
+        if(sub=='yo'){
+
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'ía'
+
+            if(check!=regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='tu'){
+
+                regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'ías'
+            if(check!=regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+                document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='usted'||sub=='ella'||sub=='el'){
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'ía'
+            
+            if(check!=regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }           
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+
+
+
+            
+
+
+            
+
+
+            
+
+
+
+        }
+        if(sub=='nosotros'||sub=='nosotras'){
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'íamos'
+            
+            if(check!=regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+        }
+        if(sub=='ustedes'||sub=='ellas'||sub=='ellos'){
+
+
+
+            regular = document.getElementById('myInput4').value.slice(0, myString.length-2 ) + 'ían'
+            
+            if(check!=regular){
+
+                document.getElementById('myDiv02').innerHTML= 'That is not correct. The correct answer is: '
+
+            }
+            else {
+                document.getElementById('myDiv02').innerHTML= 'That is correct! The answer is: '
+            }            
+            
+            
+            document.getElementById('myDiv02').innerHTML+= regular
+
+            
+
+
+
+
+        }
+        
+
+
+
+    }
+
+
+
+
+
+
+} 
+
+
+}"> <br>
+
+<div id="myDiv02" >...</div><br>
+</td></tr></table>
